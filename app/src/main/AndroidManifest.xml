@@ -13,6 +13,12 @@
         android:theme="@style/Theme.ProyekAkhirLabPemrogramanMobile"
         tools:targetApi="31">
         <activity
+            android:name=".weather_menu"
+            android:exported="false" />
+        <activity
+            android:name=".weatherMenu"
+            android:exported="false" />
+        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
