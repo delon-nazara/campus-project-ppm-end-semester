@@ -26,5 +26,9 @@
     <string name="register_error_invalid_credential">Invalid email or password</string>
 
     <string name="capture_image">Capture Image</string>
+    <string name="camera_permission">Application needs camera permission</string>
+    <string name="camera_failed">Failed to start camera: %1$s</string>
+    <string name="image_capture_failed">Failed to capture image: %1$s</string>
+    <string name="image_capture_successful">Success to capture image at: %1$s</string>
 
 </resources>

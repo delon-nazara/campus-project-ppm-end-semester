@@ -4,9 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <!-- Camera Permission -->
-    <uses-feature
-        android:name="android.hardware.camera"
-        android:required="true" />
+    <uses-feature android:name="android.hardware.camera.any" />
     <uses-permission android:name="android.permission.CAMERA" />
 
     <application
