@@ -1,6 +1,94 @@
-<?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-             android:layout_width="match_parent"
-             android:layout_height="match_parent">
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/light_pink"
+    android:padding="16dp">
+
+    <!-- Title -->
+    <TextView
+        android:id="@+id/titleSignUp1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="SIGN UP"
+        android:textSize="24sp"
+        android:textColor="@color/black"
+        android:fontFamily="serif"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="32dp" />
+
+    <!-- Username Input -->
+    <EditText
+        android:id="@+id/editTextUsername1"
+        android:layout_width="0dp"
+        android:layout_height="48dp"
+        android:hint="Username"
+        android:background="@drawable/rounded_bg"
+        android:paddingHorizontal="16dp"
+        android:paddingVertical="12dp"
+        app:layout_constraintTop_toBottomOf="@id/titleSignUp1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="24dp" />
+
+    <!-- Password Input -->
+    <EditText
+        android:id="@+id/editTextPassword1"
+        android:layout_width="0dp"
+        android:layout_height="48dp"
+        android:hint="Password"
+        android:background="@drawable/rounded_bg"
+        android:paddingHorizontal="16dp"
+        android:paddingVertical="12dp"
+        android:drawableEnd="@drawable/ic_lock"
+        android:drawablePadding="8dp"
+        android:inputType="textPassword"
+        app:layout_constraintTop_toBottomOf="@id/editTextUsername1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="16dp" />
+
+    <!-- Sign Up Button -->
+    <Button
+        android:id="@+id/buttonSignUp2"
+        android:layout_width="0dp"
+        android:layout_height="48dp"
+        android:text="Sign Up"
+        android:background="@drawable/rounded_bg"
+        android:fontFamily="serif"
+        android:textColor="@color/black"
+        app:layout_constraintTop_toBottomOf="@id/editTextPassword1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="24dp" />
+
+    <!-- "You have account?" Text -->
+    <TextView
+        android:id="@+id/textViewHaveAccount1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="You have account?"
+        android:textColor="@color/black"
+        app:layout_constraintTop_toBottomOf="@id/buttonSignUp2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="16dp" />
+
+    <!-- Log In Button -->
+    <Button
+        android:id="@+id/buttonLogin1"
+        android:layout_width="0dp"
+        android:layout_height="48dp"
+        android:text="Log In"
+        android:background="@drawable/rounded_bg"
+        android:fontFamily="serif"
+        android:textColor="@color/black"
+        app:layout_constraintTop_toBottomOf="@id/textViewHaveAccount1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="8dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

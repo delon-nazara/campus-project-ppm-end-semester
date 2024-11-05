@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">ProyekAkhirLabPemrogramanMobile</string>
+    <string name="login_button_text">Log In</string>
 </resources>
