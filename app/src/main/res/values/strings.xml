@@ -1,10 +1,12 @@
 <resources>
+
     <string name="app_name">My Wardobe</string>
 
     <string name="main_screen">Main Screen</string>
     <string name="login_screen">Login Screen</string>
     <string name="register_screen">Register Screen</string>
     <string name="home_screen">Home Screen</string>
+    <string name="camera_screen">Camera Screen</string>
 
     <string name="email">Email</string>
     <string name="email_user">Email: %s</string>
@@ -22,4 +24,7 @@
     <string name="register_error_email_registered">Email already registered</string>
     <string name="register_error_short_password">Password must be a minimum of 6 characters</string>
     <string name="register_error_invalid_credential">Invalid email or password</string>
+
+    <string name="capture_image">Capture Image</string>
+
 </resources>

@@ -33,5 +33,11 @@ class HomeScreenActivity : AppCompatActivity() {
             val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
         }
+
+        val cameraScreenButton = findViewById<Button>(R.id.buttonCameraScreen)
+        cameraScreenButton.setOnClickListener {
+            val intent = Intent(this, CameraScreenActivity::class.java)
+            startActivity(intent)
+        }
     }
 }
