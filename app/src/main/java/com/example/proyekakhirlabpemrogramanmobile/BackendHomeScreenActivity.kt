@@ -9,11 +9,11 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 
-class HomeScreenActivity : AppCompatActivity() {
+class BackendHomeScreenActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
-        setContentView(R.layout.activity_home_screen)
+        setContentView(R.layout.activity_backend_home_screen)
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
@@ -30,13 +30,13 @@ class HomeScreenActivity : AppCompatActivity() {
 
         val mainScreenButton = findViewById<Button>(R.id.buttonMainScreen)
         mainScreenButton.setOnClickListener {
-            val intent = Intent(this, MainActivity::class.java)
+            val intent = Intent(this, BackendMainActivity::class.java)
             startActivity(intent)
         }
 
         val cameraScreenButton = findViewById<Button>(R.id.buttonCameraScreen)
         cameraScreenButton.setOnClickListener {
-            val intent = Intent(this, CameraScreenActivity::class.java)
+            val intent = Intent(this, BackendCameraScreenActivity::class.java)
             startActivity(intent)
         }
     }

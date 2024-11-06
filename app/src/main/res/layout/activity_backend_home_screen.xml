@@ -6,55 +6,37 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".RegisterScreenActivity">
+    tools:context=".BackendHomeScreenActivity">
 
     <TextView
-        android:id="@+id/textViewLoginScreen"
+        android:id="@+id/textViewHomeScreen"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="100dp"
-        android:text="@string/register_screen"
+        android:text="@string/home_screen"
         android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"/>
 
-    <EditText
-        android:id="@+id/editTextEmail"
-        android:layout_width="200dp"
-        android:layout_height="50dp"
+    <TextView
+        android:id="@+id/textViewEmail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginTop="100dp"
-        android:hint="@string/email"
-        android:textColorHint="@color/black"
-        android:autofillHints="emailAddress"
-        android:inputType="textEmailAddress"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/textViewLoginScreen"/>
+        app:layout_constraintTop_toBottomOf="@id/textViewHomeScreen"/>
 
-    <EditText
-        android:id="@+id/editTextPassword"
-        android:layout_width="200dp"
-        android:layout_height="50dp"
+    <TextView
+        android:id="@+id/textViewPassword"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:hint="@string/password"
-        android:textColorHint="@color/black"
-        android:autofillHints="password"
-        android:inputType="textPassword"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/editTextEmail"/>
-
-    <Button
-        android:id="@+id/buttonRegister"
-        android:layout_width="150dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="100dp"
-        android:text="@string/register"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/editTextPassword"/>
+        app:layout_constraintTop_toBottomOf="@id/textViewEmail"/>
 
     <Button
         android:id="@+id/buttonMainScreen"
@@ -64,14 +46,14 @@
         android:text="@string/main_screen"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/buttonRegister"/>
+        app:layout_constraintTop_toBottomOf="@id/textViewPassword"/>
 
     <Button
-        android:id="@+id/buttonLoginScreen"
+        android:id="@+id/buttonCameraScreen"
         android:layout_width="200dp"
         android:layout_height="50dp"
         android:layout_marginTop="10dp"
-        android:text="@string/login_screen"
+        android:text="@string/camera_screen"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/buttonMainScreen"/>

@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
-
     <!-- Camera Permission -->
     <uses-feature android:name="android.hardware.camera.any" />
+
     <uses-permission android:name="android.permission.CAMERA" />
 
     <application
@@ -18,25 +17,38 @@
         android:theme="@style/Theme.ProyekAkhirLabPemrogramanMobile"
         tools:targetApi="31">
         <activity
-            android:name=".CameraScreenActivity"
+            android:name=".SyifaLogInScreenActivity"
             android:exported="false" />
         <activity
-            android:name=".HomeScreenActivity"
+            android:name=".SyifaSignUpScreenActivity"
             android:exported="false" />
         <activity
-            android:name=".RegisterScreenActivity"
+            android:name=".TiaraRecommendationScreenActivity"
             android:exported="false" />
         <activity
-            android:name=".LoginScreenActivity"
+            android:name=".FarizScheduleScreenActivity"
             android:exported="false" />
         <activity
-            android:name=".weather_menu"
+            android:name=".ElizabethCollectionScreenActivity"
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
+            android:name=".BackendCameraScreenActivity"
+            android:exported="false" />
+        <activity
+            android:name=".BackendHomeScreenActivity"
+            android:exported="false" />
+        <activity
+            android:name=".BackendRegisterScreenActivity"
+            android:exported="false" />
+        <activity
+            android:name=".BackendLoginScreenActivity"
+            android:exported="false" />
+        <activity
+            android:name=".BackendMainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
