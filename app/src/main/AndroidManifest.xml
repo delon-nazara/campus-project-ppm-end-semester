@@ -30,6 +30,9 @@
             android:name=".LoginScreenActivity"
             android:exported="false" />
         <activity
+            android:name=".weather_menu"
+            android:exported="false" />
+        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
