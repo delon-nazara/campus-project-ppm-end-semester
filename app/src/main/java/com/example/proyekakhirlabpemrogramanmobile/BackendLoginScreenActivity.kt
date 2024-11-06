@@ -12,14 +12,14 @@ import androidx.core.view.WindowInsetsCompat
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseAuthInvalidCredentialsException
 
-class LoginScreenActivity : AppCompatActivity() {
+class BackendLoginScreenActivity : AppCompatActivity() {
 
     private lateinit var auth: FirebaseAuth
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
-        setContentView(R.layout.activity_login_screen)
+        setContentView(R.layout.activity_backend_login_screen)
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
@@ -37,13 +37,13 @@ class LoginScreenActivity : AppCompatActivity() {
 
         val mainScreenButton = findViewById<Button>(R.id.buttonMainScreen)
         mainScreenButton.setOnClickListener {
-            val intent = Intent(this, MainActivity::class.java)
+            val intent = Intent(this, BackendMainActivity::class.java)
             startActivity(intent)
         }
 
         val registerScreenButton = findViewById<Button>(R.id.buttonRegisterScreen)
         registerScreenButton.setOnClickListener {
-            val intent = Intent(this, RegisterScreenActivity::class.java)
+            val intent = Intent(this, BackendRegisterScreenActivity::class.java)
             startActivity(intent)
         }
     }
@@ -63,7 +63,7 @@ class LoginScreenActivity : AppCompatActivity() {
         auth.signInWithEmailAndPassword(email, password).addOnCompleteListener(this) { task ->
             if (task.isSuccessful) {
                 Toast.makeText(this, getString(R.string.login_successful), Toast.LENGTH_SHORT).show()
-                val intent = Intent(this, HomeScreenActivity::class.java)
+                val intent = Intent(this, BackendHomeScreenActivity::class.java)
                 intent.putExtra("EMAIL", email)
                 intent.putExtra("PASSWORD", password)
                 startActivity(intent)
