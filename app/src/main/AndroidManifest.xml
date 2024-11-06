@@ -44,7 +44,7 @@
             android:name=".BackendLoginScreenActivity"
             android:exported="false" />
         <activity
-            android:name=".BackendMainActivity"
+            android:name=".BackendMainScreenActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

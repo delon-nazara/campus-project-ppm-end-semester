@@ -30,7 +30,7 @@ class BackendHomeScreenActivity : AppCompatActivity() {
 
         val mainScreenButton = findViewById<Button>(R.id.buttonMainScreen)
         mainScreenButton.setOnClickListener {
-            val intent = Intent(this, BackendMainActivity::class.java)
+            val intent = Intent(this, BackendMainScreenActivity::class.java)
             startActivity(intent)
         }
 
