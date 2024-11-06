@@ -31,4 +31,6 @@
     <string name="image_capture_failed">Failed to capture image: %1$s</string>
     <string name="image_capture_successful">Success to capture image at: %1$s</string>
 
+    <string name="login_button_text">Log In</string>
+
 </resources>
