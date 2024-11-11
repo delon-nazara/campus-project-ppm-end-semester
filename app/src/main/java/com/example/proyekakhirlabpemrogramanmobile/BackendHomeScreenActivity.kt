@@ -3,8 +3,8 @@ package com.example.proyekakhirlabpemrogramanmobile
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
-import android.widget.EditText
 import android.widget.TextView
+import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -32,16 +32,18 @@ class BackendHomeScreenActivity : AppCompatActivity() {
         val emailTextView = findViewById<TextView>(R.id.textViewEmail)
         emailTextView.text = getString(R.string.email_user, userEmail)
 
-        val mainScreenButton = findViewById<Button>(R.id.buttonMainScreen)
-        mainScreenButton.setOnClickListener {
-            val intent = Intent(this, BackendMainScreenActivity::class.java)
-            startActivity(intent)
-        }
-
         val cameraScreenButton = findViewById<Button>(R.id.buttonCameraScreen)
         cameraScreenButton.setOnClickListener {
             val intent = Intent(this, BackendCameraScreenActivity::class.java)
             startActivity(intent)
+        }
+
+        val logoutButton = findViewById<Button>(R.id.buttonLogout)
+        logoutButton.setOnClickListener {
+            auth.signOut()
+            val intent = Intent(this, BackendMainScreenActivity::class.java)
+            startActivity(intent)
+            Toast.makeText(this, getString(R.string.logout_successful), Toast.LENGTH_SHORT).show()
         }
     }
 }

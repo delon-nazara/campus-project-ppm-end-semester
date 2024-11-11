@@ -20,33 +20,33 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"/>
 
-    <TextView
-        android:id="@+id/textViewEmail"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="100dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/textViewHomeScreen"/>
-
     <Button
         android:id="@+id/buttonCameraScreen"
         android:layout_width="200dp"
         android:layout_height="50dp"
-        android:layout_marginTop="100dp"
+        android:layout_marginTop="150dp"
         android:text="@string/camera_screen"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/textViewEmail"/>
+        app:layout_constraintTop_toBottomOf="@id/textViewHomeScreen"/>
 
-    <Button
-        android:id="@+id/buttonMainScreen"
-        android:layout_width="200dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="10dp"
-        android:text="@string/main_screen"
+    <TextView
+        android:id="@+id/textViewEmail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="150dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/buttonCameraScreen"/>
+
+    <Button
+        android:id="@+id/buttonLogout"
+        android:layout_width="200dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="20dp"
+        android:text="@string/logout"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textViewEmail"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
