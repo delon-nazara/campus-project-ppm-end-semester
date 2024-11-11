@@ -30,9 +30,7 @@
     <string name="logout_successful">Logout Successful</string>
 
     <string name="capture_image">Capture Image</string>
-    <string name="camera_permission">Application needs camera permission</string>
+    <string name="camera_permission_denied">Camera permission denied</string>
     <string name="camera_failed">Failed to start camera: %s</string>
-    <string name="image_capture_failed">Failed to capture image: %s</string>
-    <string name="image_capture_successful">Success to capture image at: %s</string>
 
 </resources>

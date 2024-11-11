@@ -4,9 +4,12 @@ import android.Manifest
 import android.content.Intent
 import android.content.pm.PackageManager
 import android.os.Bundle
+import android.util.Log
 import android.widget.Button
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
+import androidx.activity.result.contract.ActivityResultContracts
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.camera.core.CameraSelector
 import androidx.camera.core.ImageCapture
@@ -52,16 +55,8 @@ class BackendCameraScreenActivity : AppCompatActivity() {
 
         val imageCaptureButton = findViewById<Button>(R.id.buttonImageCapture)
         imageCaptureButton.setOnClickListener {
-            if (isCameraPermissionGranted()) {
-                captureImage()
-            } else {
-                requestCameraPermission()
-            }
+            captureImage()
         }
-    }
-
-    companion object {
-        private const val REQUEST_CODE_CAMERA_PERMISSION = 10
     }
 
     private fun isCameraPermissionGranted(): Boolean {
@@ -69,18 +64,26 @@ class BackendCameraScreenActivity : AppCompatActivity() {
     }
 
     private fun requestCameraPermission() {
-        ActivityCompat.requestPermissions(this, arrayOf(Manifest.permission.CAMERA), REQUEST_CODE_CAMERA_PERMISSION)
-    }
-
-    override fun onRequestPermissionsResult(requestCode: Int, permissions: Array<String>, grantResults: IntArray) {
-        super.onRequestPermissionsResult(requestCode, permissions, grantResults)
-        if (requestCode == REQUEST_CODE_CAMERA_PERMISSION) {
-            if (grantResults.isNotEmpty() && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+        registerForActivityResult(ActivityResultContracts.RequestPermission()) { isGranted ->
+            if (isGranted) {
                 startCamera()
             } else {
-                Toast.makeText(this, getString(R.string.camera_permission), Toast.LENGTH_SHORT).show()
+                explainAboutCameraPermission()
             }
-        }
+        }.launch(Manifest.permission.CAMERA)
+    }
+
+    private fun explainAboutCameraPermission() {
+        AlertDialog.Builder(this)
+            .setTitle("Camera Permission Required")
+            .setMessage("This app requires camera permission to take pictures. Please grant permission from settings.")
+            .setPositiveButton("Ok") { _, _ ->
+                val intent = Intent(this, BackendHomeScreenActivity::class.java)
+                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
+                startActivity(intent)
+            }
+            .create()
+            .show()
     }
 
     private fun startCamera() {
@@ -109,23 +112,7 @@ class BackendCameraScreenActivity : AppCompatActivity() {
     }
 
     private fun captureImage() {
-        val photoFile = File(getExternalFilesDir(null), "${System.currentTimeMillis()}.jpg")
-        val outputOptions = ImageCapture.OutputFileOptions.Builder(photoFile).build()
-
-        imageCapture.takePicture(
-            outputOptions, ContextCompat.getMainExecutor(this),
-            object : ImageCapture.OnImageSavedCallback {
-                override fun onError(exc: ImageCaptureException) {
-                    Toast.makeText(baseContext,
-                        getString(R.string.image_capture_failed, exc.message), Toast.LENGTH_SHORT).show()
-                    exc.printStackTrace()
-                }
-                override fun onImageSaved(output: ImageCapture.OutputFileResults) {
-                    Toast.makeText(baseContext,
-                        getString(R.string.image_capture_successful, photoFile.absolutePath), Toast.LENGTH_SHORT).show()
-                }
-            }
-        )
+        // to do
     }
 
 }

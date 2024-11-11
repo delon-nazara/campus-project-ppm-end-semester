@@ -42,10 +42,10 @@ class BackendHomeScreenActivity : AppCompatActivity() {
         val logoutButton = findViewById<Button>(R.id.buttonLogout)
         logoutButton.setOnClickListener {
             auth.signOut()
+            Toast.makeText(this, getString(R.string.logout_successful), Toast.LENGTH_SHORT).show()
             val intent = Intent(this, BackendMainScreenActivity::class.java)
             intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_NEW_TASK)
             startActivity(intent)
-            Toast.makeText(this, getString(R.string.logout_successful), Toast.LENGTH_SHORT).show()
         }
     }
 }
