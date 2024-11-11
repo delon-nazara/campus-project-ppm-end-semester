@@ -35,6 +35,7 @@ class BackendHomeScreenActivity : AppCompatActivity() {
         val cameraScreenButton = findViewById<Button>(R.id.buttonCameraScreen)
         cameraScreenButton.setOnClickListener {
             val intent = Intent(this, BackendCameraScreenActivity::class.java)
+            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
             startActivity(intent)
         }
 
@@ -42,6 +43,7 @@ class BackendHomeScreenActivity : AppCompatActivity() {
         logoutButton.setOnClickListener {
             auth.signOut()
             val intent = Intent(this, BackendMainScreenActivity::class.java)
+            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_NEW_TASK)
             startActivity(intent)
             Toast.makeText(this, getString(R.string.logout_successful), Toast.LENGTH_SHORT).show()
         }

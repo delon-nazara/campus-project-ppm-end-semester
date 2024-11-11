@@ -7,8 +7,12 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import com.google.firebase.auth.FirebaseAuth
 
 class BackendMainScreenActivity : AppCompatActivity() {
+
+    private lateinit var auth: FirebaseAuth
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -19,15 +23,23 @@ class BackendMainScreenActivity : AppCompatActivity() {
             insets
         }
 
+        auth = FirebaseAuth.getInstance()
+        if (auth.currentUser != null) {
+            val intent = Intent(this, BackendHomeScreenActivity::class.java)
+            startActivity(intent)
+        }
+
         val loginScreenButton = findViewById<Button>(R.id.buttonLoginScreen)
         loginScreenButton.setOnClickListener {
             val intent = Intent(this, BackendLoginScreenActivity::class.java)
+            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
             startActivity(intent)
         }
 
         val registerScreenButton = findViewById<Button>(R.id.buttonRegisterScreen)
         registerScreenButton.setOnClickListener {
             val intent = Intent(this, BackendRegisterScreenActivity::class.java)
+            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
             startActivity(intent)
         }
     }

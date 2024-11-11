@@ -37,9 +37,8 @@ class BackendCameraScreenActivity : AppCompatActivity() {
 
         val homeScreenButton = findViewById<Button>(R.id.buttonHomeScreen)
         homeScreenButton.setOnClickListener {
-            val intent = Intent(this, BackendHomeScreenActivity::class.java).apply {
-                flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
-            }
+            val intent = Intent(this, BackendHomeScreenActivity::class.java)
+            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
             startActivity(intent)
         }
 
