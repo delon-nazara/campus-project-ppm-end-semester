@@ -7,6 +7,7 @@
     <string name="register_screen">Register Screen</string>
     <string name="home_screen">Home Screen</string>
     <string name="camera_screen">Camera Screen</string>
+    <string name="collection_screen">Collection Screen</string>
 
     <string name="email">Email</string>
     <string name="email_empty">Email cannot be empty</string>

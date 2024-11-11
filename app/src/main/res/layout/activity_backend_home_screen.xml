@@ -30,6 +30,16 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/textViewHomeScreen"/>
 
+    <Button
+        android:id="@+id/buttonCollectionScreen"
+        android:layout_width="200dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="10dp"
+        android:text="@string/collection_screen"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/buttonCameraScreen"/>
+
     <TextView
         android:id="@+id/textViewEmail"
         android:layout_width="wrap_content"
@@ -37,7 +47,7 @@
         android:layout_marginTop="150dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/buttonCameraScreen"/>
+        app:layout_constraintTop_toBottomOf="@id/buttonCollectionScreen"/>
 
     <Button
         android:id="@+id/buttonLogout"

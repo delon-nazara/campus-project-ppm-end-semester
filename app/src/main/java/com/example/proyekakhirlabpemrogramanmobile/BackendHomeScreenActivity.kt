@@ -39,6 +39,13 @@ class BackendHomeScreenActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
+        val collectionScreenButton = findViewById<Button>(R.id.buttonCollectionScreen)
+        collectionScreenButton.setOnClickListener {
+            val intent = Intent(this, BackendCollectionScreenActivity::class.java)
+            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
+            startActivity(intent)
+        }
+
         val logoutButton = findViewById<Button>(R.id.buttonLogout)
         logoutButton.setOnClickListener {
             auth.signOut()

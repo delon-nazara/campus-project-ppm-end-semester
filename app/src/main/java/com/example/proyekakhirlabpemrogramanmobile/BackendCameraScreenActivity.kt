@@ -112,7 +112,23 @@ class BackendCameraScreenActivity : AppCompatActivity() {
     }
 
     private fun captureImage() {
-        // to do
+//        val photoFile = File(getExternalFilesDir(null), "${System.currentTimeMillis()}.jpg")
+//        val outputOptions = ImageCapture.OutputFileOptions.Builder(photoFile).build()
+//
+//        imageCapture.takePicture(
+//            outputOptions, ContextCompat.getMainExecutor(this),
+//            object : ImageCapture.OnImageSavedCallback {
+//                override fun onError(exc: ImageCaptureException) {
+//                    Toast.makeText(baseContext,
+//                        getString(R.string.image_capture_failed, exc.message), Toast.LENGTH_SHORT).show()
+//                    exc.printStackTrace()
+//                }
+//                override fun onImageSaved(output: ImageCapture.OutputFileResults) {
+//                    Toast.makeText(baseContext,
+//                        getString(R.string.image_capture_successful, photoFile.absolutePath), Toast.LENGTH_SHORT).show()
+//                }
+//            }
+//        )
     }
 
 }
