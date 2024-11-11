@@ -39,23 +39,23 @@
         app:layout_constraintTop_toBottomOf="@id/textViewEmail"/>
 
     <Button
-        android:id="@+id/buttonMainScreen"
+        android:id="@+id/buttonCameraScreen"
         android:layout_width="200dp"
         android:layout_height="50dp"
         android:layout_marginTop="100dp"
-        android:text="@string/main_screen"
+        android:text="@string/camera_screen"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/textViewPassword"/>
 
     <Button
-        android:id="@+id/buttonCameraScreen"
+        android:id="@+id/buttonMainScreen"
         android:layout_width="200dp"
         android:layout_height="50dp"
         android:layout_marginTop="10dp"
-        android:text="@string/camera_screen"
+        android:text="@string/main_screen"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/buttonMainScreen"/>
+        app:layout_constraintTop_toBottomOf="@id/buttonCameraScreen"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

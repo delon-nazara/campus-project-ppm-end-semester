@@ -48,32 +48,32 @@
 
     <Button
         android:id="@+id/buttonLogin"
-        android:layout_width="150dp"
+        android:layout_width="200dp"
         android:layout_height="50dp"
-        android:layout_marginTop="100dp"
+        android:layout_marginTop="30dp"
         android:text="@string/login"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/editTextPassword"/>
 
     <Button
-        android:id="@+id/buttonMainScreen"
+        android:id="@+id/buttonRegisterScreen"
         android:layout_width="200dp"
         android:layout_height="50dp"
         android:layout_marginTop="100dp"
-        android:text="@string/main_screen"
+        android:text="@string/register_screen"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/buttonLogin"/>
 
     <Button
-        android:id="@+id/buttonRegisterScreen"
+        android:id="@+id/buttonMainScreen"
         android:layout_width="200dp"
         android:layout_height="50dp"
         android:layout_marginTop="10dp"
-        android:text="@string/register_screen"
+        android:text="@string/main_screen"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/buttonMainScreen"/>
+        app:layout_constraintTop_toBottomOf="@id/buttonRegisterScreen"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
