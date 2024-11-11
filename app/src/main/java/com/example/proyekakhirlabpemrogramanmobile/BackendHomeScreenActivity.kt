@@ -3,13 +3,18 @@ package com.example.proyekakhirlabpemrogramanmobile
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
+import android.widget.EditText
 import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import com.google.firebase.auth.FirebaseAuth
 
 class BackendHomeScreenActivity : AppCompatActivity() {
+
+    private lateinit var auth: FirebaseAuth
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -20,13 +25,12 @@ class BackendHomeScreenActivity : AppCompatActivity() {
             insets
         }
 
-        val email = intent.getStringExtra("EMAIL")
-        val emailTextView = findViewById<TextView>(R.id.textViewEmail)
-        emailTextView.text = getString(R.string.email_user, email)
+        auth = FirebaseAuth.getInstance()
+        val user = auth.currentUser
+        val userEmail = user?.email ?: "not found"
 
-        val password = intent.getStringExtra("PASSWORD")
-        val passwordTextView = findViewById<TextView>(R.id.textViewPassword)
-        passwordTextView.text = getString(R.string.password_user, password)
+        val emailTextView = findViewById<TextView>(R.id.textViewEmail)
+        emailTextView.text = getString(R.string.email_user, userEmail)
 
         val mainScreenButton = findViewById<Button>(R.id.buttonMainScreen)
         mainScreenButton.setOnClickListener {

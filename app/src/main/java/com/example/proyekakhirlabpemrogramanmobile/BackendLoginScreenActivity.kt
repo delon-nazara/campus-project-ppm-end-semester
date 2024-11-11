@@ -64,8 +64,6 @@ class BackendLoginScreenActivity : AppCompatActivity() {
             if (task.isSuccessful) {
                 Toast.makeText(this, getString(R.string.login_successful), Toast.LENGTH_SHORT).show()
                 val intent = Intent(this, BackendHomeScreenActivity::class.java)
-                intent.putExtra("EMAIL", email)
-                intent.putExtra("PASSWORD", password)
                 startActivity(intent)
             } else {
                 when (val exception = task.exception) {
@@ -73,7 +71,7 @@ class BackendLoginScreenActivity : AppCompatActivity() {
                         Toast.makeText(this, getString(R.string.login_error_invalid_credential), Toast.LENGTH_SHORT).show()
                     }
                     else -> {
-                        Toast.makeText(this, "Error: ${exception?.message}", Toast.LENGTH_SHORT).show()
+                        Toast.makeText(this, getString(R.string.login_error_general, exception?.message), Toast.LENGTH_SHORT).show()
                     }
                 }
             }
