@@ -4,9 +4,12 @@ import android.Manifest
 import android.content.Intent
 import android.content.pm.PackageManager
 import android.os.Bundle
+import android.util.Log
 import android.widget.Button
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
+import androidx.activity.result.contract.ActivityResultContracts
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.camera.core.CameraSelector
 import androidx.camera.core.ImageCapture
@@ -14,11 +17,17 @@ import androidx.camera.core.ImageCaptureException
 import androidx.camera.core.Preview
 import androidx.camera.lifecycle.ProcessCameraProvider
 import androidx.camera.view.PreviewView
-import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import com.cloudinary.android.MediaManager
+import com.cloudinary.android.callback.ErrorInfo
+import com.cloudinary.android.callback.UploadCallback
+import io.github.cdimascio.dotenv.dotenv
 import java.io.File
+import java.text.SimpleDateFormat
+import java.util.Date
+import java.util.Locale
 
 class BackendCameraScreenActivity : AppCompatActivity() {
 
@@ -37,9 +46,8 @@ class BackendCameraScreenActivity : AppCompatActivity() {
 
         val homeScreenButton = findViewById<Button>(R.id.buttonHomeScreen)
         homeScreenButton.setOnClickListener {
-            val intent = Intent(this, BackendHomeScreenActivity::class.java).apply {
-                flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
-            }
+            val intent = Intent(this, BackendHomeScreenActivity::class.java)
+            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
             startActivity(intent)
         }
 
@@ -53,16 +61,8 @@ class BackendCameraScreenActivity : AppCompatActivity() {
 
         val imageCaptureButton = findViewById<Button>(R.id.buttonImageCapture)
         imageCaptureButton.setOnClickListener {
-            if (isCameraPermissionGranted()) {
-                captureImage()
-            } else {
-                requestCameraPermission()
-            }
+            captureImage()
         }
-    }
-
-    companion object {
-        private const val REQUEST_CODE_CAMERA_PERMISSION = 10
     }
 
     private fun isCameraPermissionGranted(): Boolean {
@@ -70,18 +70,26 @@ class BackendCameraScreenActivity : AppCompatActivity() {
     }
 
     private fun requestCameraPermission() {
-        ActivityCompat.requestPermissions(this, arrayOf(Manifest.permission.CAMERA), REQUEST_CODE_CAMERA_PERMISSION)
-    }
-
-    override fun onRequestPermissionsResult(requestCode: Int, permissions: Array<String>, grantResults: IntArray) {
-        super.onRequestPermissionsResult(requestCode, permissions, grantResults)
-        if (requestCode == REQUEST_CODE_CAMERA_PERMISSION) {
-            if (grantResults.isNotEmpty() && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+        registerForActivityResult(ActivityResultContracts.RequestPermission()) { isGranted ->
+            if (isGranted) {
                 startCamera()
             } else {
-                Toast.makeText(this, getString(R.string.camera_permission), Toast.LENGTH_SHORT).show()
+                explainAboutCameraPermission()
             }
-        }
+        }.launch(Manifest.permission.CAMERA)
+    }
+
+    private fun explainAboutCameraPermission() {
+        AlertDialog.Builder(this)
+            .setTitle(getString(R.string.camera_permission_required))
+            .setMessage(getString(R.string.camera_permission_explained))
+            .setPositiveButton("Ok") { _, _ ->
+                val intent = Intent(this, BackendHomeScreenActivity::class.java)
+                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
+                startActivity(intent)
+            }
+            .create()
+            .show()
     }
 
     private fun startCamera() {
@@ -102,31 +110,87 @@ class BackendCameraScreenActivity : AppCompatActivity() {
                 )
             } catch (exc: Exception) {
                 Toast.makeText(this,
-                    getString(R.string.camera_failed, exc.message), Toast.LENGTH_SHORT).show()
+                    getString(R.string.camera_failed_to_start, exc.message), Toast.LENGTH_SHORT).show()
                 exc.printStackTrace()
             }
 
         }, ContextCompat.getMainExecutor(this))
     }
 
+    private fun getFileName(): String {
+        val formatter = SimpleDateFormat("dd-MM-yyyy_HH:mm:ss", Locale("in", "ID"))
+        return formatter.format(Date()) + ".jpg"
+    }
+
     private fun captureImage() {
-        val photoFile = File(getExternalFilesDir(null), "${System.currentTimeMillis()}.jpg")
+        val photoFile = File(filesDir, getFileName())
         val outputOptions = ImageCapture.OutputFileOptions.Builder(photoFile).build()
 
         imageCapture.takePicture(
-            outputOptions, ContextCompat.getMainExecutor(this),
+            outputOptions,
+            ContextCompat.getMainExecutor(this),
             object : ImageCapture.OnImageSavedCallback {
-                override fun onError(exc: ImageCaptureException) {
-                    Toast.makeText(baseContext,
-                        getString(R.string.image_capture_failed, exc.message), Toast.LENGTH_SHORT).show()
-                    exc.printStackTrace()
+
+                override fun onImageSaved(outputFileResults: ImageCapture.OutputFileResults) {
+                    Toast.makeText(applicationContext, "Uploading image...", Toast.LENGTH_SHORT).show()
+                    uploadImageToCloudinary(photoFile)
                 }
-                override fun onImageSaved(output: ImageCapture.OutputFileResults) {
-                    Toast.makeText(baseContext,
-                        getString(R.string.image_capture_successful, photoFile.absolutePath), Toast.LENGTH_SHORT).show()
+
+                override fun onError(exception: ImageCaptureException) {
+                    Toast.makeText(applicationContext, "Capture Image Failed", Toast.LENGTH_SHORT).show()
                 }
+
             }
         )
+    }
+
+    private fun uploadImageToCloudinary(file: File) {
+        val dotenv = dotenv {
+            directory = "/assets"
+            filename = "env"
+        }
+
+        val config = hashMapOf(
+            "cloud_name" to dotenv["CLOUD_NAME"],
+            "secure" to true
+        )
+        MediaManager.init(this, config)
+
+        MediaManager
+            .get()
+            .upload(file.absolutePath)
+            .unsigned(dotenv["UPLOAD_PRESET_UNSIGNED"])
+            .option("asset_folder", "temporary")
+            .option("public_id", file.name)
+            .callback(object : UploadCallback {
+
+                override fun onStart(requestId: String) {
+                    Log.d("Cloudinary", "Upload started: $requestId")
+                }
+
+                override fun onProgress(requestId: String, bytes: Long, totalBytes: Long) {
+                    val progress = (bytes.toDouble() / totalBytes) * 100
+                    Log.d("Cloudinary", "Progress: $progress%")
+                }
+
+                override fun onSuccess(requestId: String, resultData: Map<*, *>) {
+                    Toast.makeText(applicationContext, "Upload Successful", Toast.LENGTH_SHORT).show()
+                    Log.d("Cloudinary", "Upload successful: $resultData")
+                    if (file.exists()) {
+                        file.delete()
+                        Log.d("Cloudinary", "Local file deleted after upload")
+                    }
+                }
+
+                override fun onError(requestId: String, error: ErrorInfo) {
+                    Log.e("Cloudinary", "Upload error: $error")
+                }
+
+                override fun onReschedule(requestId: String, error: ErrorInfo) {
+                    Log.d("Cloudinary", "Upload rescheduled: $error")
+                }
+            })
+            .dispatch()
     }
 
 }

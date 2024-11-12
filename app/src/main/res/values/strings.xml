@@ -7,30 +7,34 @@
     <string name="register_screen">Register Screen</string>
     <string name="home_screen">Home Screen</string>
     <string name="camera_screen">Camera Screen</string>
+    <string name="collection_screen">Collection Screen</string>
 
     <string name="email">Email</string>
-    <string name="email_user">Email: %s</string>
     <string name="email_empty">Email cannot be empty</string>
+    <string name="email_user">Email: %s</string>
     <string name="password">Password</string>
-    <string name="password_user">Password: %s</string>
     <string name="password_empty">Password cannot be empty</string>
 
     <string name="login">Login</string>
     <string name="login_successful">Login Successful</string>
-    <string name="login_error_invalid_credential">Wrong email or password</string>
+    <string name="login_error_invalid_credential">Invalid email or password</string>
+    <string name="login_error_general">Error: %s</string>
 
     <string name="register">Register</string>
     <string name="register_successful">Register Successful</string>
     <string name="register_error_email_registered">Email already registered</string>
-    <string name="register_error_short_password">Password must be a minimum of 6 characters</string>
+    <string name="register_error_short_password">Password must consist of 6–15 characters</string>
     <string name="register_error_invalid_credential">Invalid email or password</string>
+    <string name="register_error_general">Error: %s</string>
+
+    <string name="logout">Logout</string>
+    <string name="logout_successful">Logout Successful</string>
 
     <string name="capture_image">Capture Image</string>
-    <string name="camera_permission">Application needs camera permission</string>
-    <string name="camera_failed">Failed to start camera: %1$s</string>
-    <string name="image_capture_failed">Failed to capture image: %1$s</string>
-    <string name="image_capture_successful">Success to capture image at: %1$s</string>
+    <string name="camera_failed_to_start">Failed to start camera: %s</string>
+    <string name="camera_permission_required">Camera Permission Required</string>
+    <string name="camera_permission_explained">This app requires camera permission to take pictures. Please grant permission from settings.</string>
 
-    <string name="login_button_text">Log In</string>
+    <string name="add_collection">Add Collection</string>
 
 </resources>

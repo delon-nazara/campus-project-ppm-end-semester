@@ -40,12 +40,14 @@ class BackendRegisterScreenActivity : AppCompatActivity() {
         val mainScreenButton = findViewById<Button>(R.id.buttonMainScreen)
         mainScreenButton.setOnClickListener {
             val intent = Intent(this, BackendMainScreenActivity::class.java)
+            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
             startActivity(intent)
         }
 
         val loginScreenButton = findViewById<Button>(R.id.buttonLoginScreen)
         loginScreenButton.setOnClickListener {
             val intent = Intent(this, BackendLoginScreenActivity::class.java)
+            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
             startActivity(intent)
         }
     }
@@ -66,8 +68,7 @@ class BackendRegisterScreenActivity : AppCompatActivity() {
             if (task.isSuccessful) {
                 Toast.makeText(this, getString(R.string.register_successful), Toast.LENGTH_SHORT).show()
                 val intent = Intent(this, BackendHomeScreenActivity::class.java)
-                intent.putExtra("EMAIL", email)
-                intent.putExtra("PASSWORD", password)
+                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_NEW_TASK)
                 startActivity(intent)
             } else {
                 when (val exception = task.exception) {
@@ -81,7 +82,8 @@ class BackendRegisterScreenActivity : AppCompatActivity() {
                         Toast.makeText(this, getString(R.string.register_error_invalid_credential), Toast.LENGTH_SHORT).show()
                     }
                     else -> {
-                        Toast.makeText(this, "Error: ${exception?.message}", Toast.LENGTH_SHORT).show()
+                        Toast.makeText(this,
+                            getString(R.string.register_error_general, exception?.message), Toast.LENGTH_SHORT).show()
                     }
                 }
             }

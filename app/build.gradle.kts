@@ -66,4 +66,10 @@ dependencies {
     implementation(libs.androidx.camera.view)
     implementation(libs.androidx.camera.extensions)
     implementation(libs.guava)
+
+    // Cloudinary Library
+    implementation(libs.cloudinary.android)
+
+    // Dotenv Kotlin Library
+    implementation(libs.dotenv.kotlin)
 }
