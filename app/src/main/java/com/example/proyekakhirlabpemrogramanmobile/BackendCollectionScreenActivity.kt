@@ -2,7 +2,6 @@ package com.example.proyekakhirlabpemrogramanmobile
 
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import android.widget.Button
 import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
@@ -29,6 +28,7 @@ class BackendCollectionScreenActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
+        // content tab (temporary)
         var selectedTabs = "Shirt"
         val text = mapOf(
             "Shirt" to "Baju",
