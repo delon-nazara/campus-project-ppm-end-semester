@@ -101,7 +101,29 @@
             android:scaleType="centerCrop"
             android:src="@drawable/top" />
 
+        <ImageView
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_margin="4dp"
+            android:background="#FFFFFF"
+            android:scaleType="centerCrop"
+            android:src="@drawable/top2" />
 
+        <ImageView
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_margin="4dp"
+            android:background="#FFFFFF"
+            android:scaleType="centerCrop"
+            android:src="@drawable/top3" />
+
+        <ImageView
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_margin="4dp"
+            android:background="#FFFFFF"
+            android:scaleType="centerCrop"
+            android:src="@drawable/top4" />
 
         <!-- Add more items as needed -->
     </GridLayout>

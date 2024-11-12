@@ -1,19 +1,130 @@
-<?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    android:orientation="vertical"
+    android:background="#F8EAE5"
+    android:padding="16dp"
+    android:gravity="center_horizontal">
 
+    <!-- Teks Judul -->
     <TextView
+        android:id="@+id/judul"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:text="Koleksi Outfit"
+        android:textSize="24sp"
+        android:textColor="#000"
+        android:layout_marginBottom="24dp"
+        android:gravity="center" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <!-- Grid Koleksi Outfit dengan Label Samping -->
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <!-- Label Vertikal (Top, S, Shoes) -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Top"
+                android:textSize="18sp"
+                android:textColor="#000"
+                android:layout_marginBottom="32dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="S"
+                android:textSize="18sp"
+                android:textColor="#000"
+                android:layout_marginBottom="32dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Shoes"
+                android:textSize="18sp"
+                android:textColor="#000" />
+
+        </LinearLayout>
+
+        <!-- Grid Gambar Outfit -->
+        <GridLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:rowCount="3"
+            android:columnCount="2"
+            android:layout_marginStart="16dp"
+            android:alignmentMode="alignMargins"
+            android:columnOrderPreserved="false"
+            android:layout_gravity="center">
+
+            <!-- Item Gambar untuk setiap kategori -->
+            <ImageView
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:src="@drawable/ic_image_placeholder"
+                android:background="@drawable/bg_image"
+                android:layout_margin="8dp"
+                android:contentDescription="Gambar Top 1" />
+
+            <ImageView
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:src="@drawable/ic_image_placeholder"
+                android:background="@drawable/bg_image"
+                android:layout_margin="8dp"
+                android:contentDescription="Gambar Top 2" />
+
+            <ImageView
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:src="@drawable/ic_image_placeholder"
+                android:background="@drawable/bg_image"
+                android:layout_margin="8dp"
+                android:contentDescription="Gambar S 1" />
+
+            <ImageView
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:src="@drawable/ic_image_placeholder"
+                android:background="@drawable/bg_image"
+                android:layout_margin="8dp"
+                android:contentDescription="Gambar S 2" />
+
+            <ImageView
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:src="@drawable/ic_image_placeholder"
+                android:background="@drawable/bg_image"
+                android:layout_margin="8dp"
+                android:contentDescription="Gambar Shoes 1" />
+
+            <ImageView
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:src="@drawable/ic_image_placeholder"
+                android:background="@drawable/bg_image"
+                android:layout_margin="8dp"
+                android:contentDescription="Gambar Shoes 2" />
+        </GridLayout>
+    </LinearLayout>
+
+    <!-- Tombol Kamera -->
+    <ImageButton
+        android:id="@+id/tombol_kamera"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_camera"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:layout_marginTop="24dp"
+        android:contentDescription="Tombol Kamera" />
+</LinearLayout>
