@@ -42,7 +42,7 @@
     <EditText
         android:id="@+id/editTextPassword1"
         android:layout_width="0dp"
-        android:layout_height="48dp"
+        android:layout_height="60dp"
         android:hint="Password"
         android:background="@drawable/box_text"
         android:paddingHorizontal="16dp"
