@@ -4,4 +4,5 @@
     <color name="white">#FFFFFFFF</color>
     <color name="light_pink">#F5E1DB</color>
     <color name="temp">#BCB2F2</color>
+    <color name="button">#F9E6E6</color>
 </resources>
