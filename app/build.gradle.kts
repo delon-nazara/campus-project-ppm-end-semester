@@ -2,7 +2,7 @@ plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
 
-    // google-services for firebase
+    // Google Services for Firebase
     id("com.google.gms.google-services")
 }
 
@@ -45,6 +45,8 @@ android {
 }
 
 dependencies {
+
+    // Default Library
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.material)
@@ -72,4 +74,5 @@ dependencies {
 
     // Dotenv Kotlin Library
     implementation(libs.dotenv.kotlin)
+
 }
