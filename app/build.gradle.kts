@@ -75,4 +75,7 @@ dependencies {
     // Dotenv Kotlin Library
     implementation(libs.dotenv.kotlin)
 
+    // Image Cropper Library
+    implementation(libs.android.image.cropper)
+
 }

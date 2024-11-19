@@ -3,9 +3,12 @@ package com.example.proyekakhirlabpemrogramanmobile
 import android.Manifest
 import android.content.Intent
 import android.content.pm.PackageManager
+import android.media.Image
+import android.net.Uri
 import android.os.Bundle
 import android.util.Log
 import android.widget.Button
+import android.widget.ImageView
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.activity.result.contract.ActivityResultContracts
@@ -20,6 +23,9 @@ import androidx.camera.view.PreviewView
 import androidx.core.content.ContextCompat
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import com.canhub.cropper.CropImageContract
+import com.canhub.cropper.CropImageContractOptions
+import com.canhub.cropper.CropImageOptions
 import com.cloudinary.android.MediaManager
 import com.cloudinary.android.callback.ErrorInfo
 import com.cloudinary.android.callback.UploadCallback
@@ -44,9 +50,9 @@ class BackendCameraScreenActivity : AppCompatActivity() {
             insets
         }
 
-        val homeScreenButton = findViewById<Button>(R.id.buttonHomeScreen)
-        homeScreenButton.setOnClickListener {
-            val intent = Intent(this, BackendHomeScreenActivity::class.java)
+        val closeImageView = findViewById<ImageView>(R.id.imageViewClose)
+        closeImageView.setOnClickListener {
+            val intent = Intent(this, BackendCollectionScreenActivity::class.java)
             intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
             startActivity(intent)
         }
@@ -59,8 +65,8 @@ class BackendCameraScreenActivity : AppCompatActivity() {
             requestCameraPermission()
         }
 
-        val imageCaptureButton = findViewById<Button>(R.id.buttonImageCapture)
-        imageCaptureButton.setOnClickListener {
+        val captureImageView = findViewById<ImageView>(R.id.imageViewCapture)
+        captureImageView.setOnClickListener {
             captureImage()
         }
     }
@@ -132,8 +138,11 @@ class BackendCameraScreenActivity : AppCompatActivity() {
             object : ImageCapture.OnImageSavedCallback {
 
                 override fun onImageSaved(outputFileResults: ImageCapture.OutputFileResults) {
-                    Toast.makeText(applicationContext, "Uploading image...", Toast.LENGTH_SHORT).show()
-                    uploadImageToCloudinary(photoFile)
+//                    Toast.makeText(applicationContext, "Uploading image...", Toast.LENGTH_SHORT).show()
+                    val intent = Intent(applicationContext, BackendEditScreenActivity::class.java)
+                    intent.putExtra("image_uri", Uri.fromFile(photoFile).toString())
+                    startActivity(intent)
+//                    uploadImageToCloudinary(photoFile)
                 }
 
                 override fun onError(exception: ImageCaptureException) {

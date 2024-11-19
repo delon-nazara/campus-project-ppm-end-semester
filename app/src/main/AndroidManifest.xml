@@ -17,10 +17,10 @@
         android:theme="@style/Theme.ProyekAkhirLabPemrogramanMobile"
         tools:targetApi="31">
         <activity
-            android:name=".BackendCollectionScreenActivity"
+            android:name=".BackendEditScreenActivity"
             android:exported="false" />
         <activity
-            android:name=".SyifaLogInScreenActivity"
+            android:name=".BackendCollectionScreenActivity"
             android:exported="false" />
         <activity
             android:name=".SyifaSignUpScreenActivity"

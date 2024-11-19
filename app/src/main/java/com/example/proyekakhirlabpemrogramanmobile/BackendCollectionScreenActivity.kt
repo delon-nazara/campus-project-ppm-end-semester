@@ -1,11 +1,20 @@
 package com.example.proyekakhirlabpemrogramanmobile
 
 import android.content.Intent
+import android.graphics.drawable.InsetDrawable
+import android.net.Uri
+import android.os.Build
 import android.os.Bundle
+import android.util.TypedValue
 import android.widget.Button
+import android.widget.PopupMenu
 import android.widget.TextView
+import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
+import androidx.activity.result.ActivityResultLauncher
+import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.view.menu.MenuBuilder
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.google.android.material.tabs.TabLayout
@@ -26,6 +35,26 @@ class BackendCollectionScreenActivity : AppCompatActivity() {
             val intent = Intent(this, BackendHomeScreenActivity::class.java)
             intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
             startActivity(intent)
+        }
+
+        val addCollectionButton = findViewById<Button>(R.id.buttonAddCollection)
+        addCollectionButton.setOnClickListener {
+            val popupMenu = PopupMenu(this, addCollectionButton)
+            popupMenu.menuInflater.inflate(R.menu.add_collection_menu, popupMenu.menu)
+
+            popupMenu.setOnMenuItemClickListener { item ->
+                when (item.itemId) {
+                    R.id.camera -> {
+                        val intent = Intent(this, BackendCameraScreenActivity::class.java)
+                        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
+                        startActivity(intent)
+                        true
+                    }
+                    else -> false
+                }
+            }
+
+            popupMenu.show()
         }
 
         // content tab (temporary)
@@ -68,3 +97,4 @@ class BackendCollectionScreenActivity : AppCompatActivity() {
 
     }
 }
+

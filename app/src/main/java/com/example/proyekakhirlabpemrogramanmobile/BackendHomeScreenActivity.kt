@@ -32,13 +32,6 @@ class BackendHomeScreenActivity : AppCompatActivity() {
         val emailTextView = findViewById<TextView>(R.id.textViewEmail)
         emailTextView.text = getString(R.string.email_user, userEmail)
 
-        val cameraScreenButton = findViewById<Button>(R.id.buttonCameraScreen)
-        cameraScreenButton.setOnClickListener {
-            val intent = Intent(this, BackendCameraScreenActivity::class.java)
-            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
-            startActivity(intent)
-        }
-
         val collectionScreenButton = findViewById<Button>(R.id.buttonCollectionScreen)
         collectionScreenButton.setOnClickListener {
             val intent = Intent(this, BackendCollectionScreenActivity::class.java)

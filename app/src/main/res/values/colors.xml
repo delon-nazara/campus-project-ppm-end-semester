@@ -3,6 +3,7 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="light_pink">#F5E1DB</color>
+    <color name="soft_pink">#E7E3E2</color>
     <color name="temp">#BCB2F2</color>
     <color name="button">#F9E6E6</color>
 </resources>

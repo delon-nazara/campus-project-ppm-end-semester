@@ -1,5 +1,6 @@
 [versions]
 agp = "8.6.1"
+androidImageCropper = "4.6.0"
 cameraCore = "1.4.0"
 cameraCamera2 = "1.4.0"
 cameraLifecycle = "1.4.0"
@@ -21,6 +22,7 @@ constraintlayout = "2.2.0"
 firebaseFirestore = "25.1.1"
 
 [libraries]
+android-image-cropper = { module = "com.vanniktech:android-image-cropper", version.ref = "androidImageCropper" }
 androidx-camera-extensions = { module = "androidx.camera:camera-extensions", version.ref = "cameraExtensions" }
 androidx-camera-view = { module = "androidx.camera:camera-view", version.ref = "cameraView" }
 androidx-camera-lifecycle = { module = "androidx.camera:camera-lifecycle", version.ref = "cameraLifecycle" }
