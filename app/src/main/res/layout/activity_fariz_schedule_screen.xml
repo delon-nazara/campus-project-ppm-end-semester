@@ -1,11 +1,190 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
+<LinearLayout
+    android:orientation="vertical"
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".FarizScheduleScreenActivity">
+    android:background="@drawable/background"
+    android:padding="16dp">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+   <TextView
+       android:id="@+id/schedule_title"
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:fontFamily="@font/hedvig_letters_serif"
+       android:text="@string/schedule_title"
+       android:textStyle="bold"
+       android:padding="16dp"/>
+   <LinearLayout
+       android:id="@+id/schedule_head"
+       android:padding="16dp"
+       android:background="@drawable/rounded_bg"
+       android:orientation="horizontal"
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content">
+
+      <TextView
+          android:fontFamily="@font/hedvig_letters_serif"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:text="@string/schedule_head"
+          android:textColor="@color/black"/>
+   </LinearLayout>
+
+
+   <androidx.constraintlayout.widget.ConstraintLayout
+       android:layout_marginTop="16.dp"
+       android:orientation="horizontal"
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content">
+
+      <ImageButton
+          android:id="@+id/previous_date"
+          android:scaleType="fitCenter"
+          android:background="@drawable/rounded_bg"
+          android:contentDescription="null"
+          android:src="@drawable/ic_arrow_left"
+          android:layout_width="wrap_content"
+          android:layout_height="50dp"
+          tools:ignore="MissingConstraints"
+          app:layout_constraintEnd_toStartOf="@id/date_today"
+          android:layout_marginRight="30dp"/>
+
+      <Button
+          android:id="@+id/date_today"
+          style="@style/Widget.Material3.Button.ElevatedButton"
+          android:textColor="@color/black"
+          android:fontFamily="@font/hedvig_letters_serif"
+          android:textSize="18sp"
+          android:layout_width="wrap_content"
+          android:layout_height="50dp"
+          android:text="@string/schedule_date"
+          tools:ignore="MissingConstraints"
+          app:layout_constraintEnd_toEndOf="parent"
+          app:layout_constraintStart_toStartOf="parent"/>
+
+      <ImageButton
+          android:id="@+id/next_date"
+          android:scaleType="fitCenter"
+          android:background="@drawable/rounded_bg"
+          android:contentDescription="null"
+          android:src="@drawable/ic_arrow_right"
+          android:layout_width="wrap_content"
+          android:layout_height="50dp"
+          tools:ignore="MissingConstraints"
+          app:layout_constraintStart_toEndOf="@id/date_today"
+         android:layout_marginLeft="30dp"/>
+   </androidx.constraintlayout.widget.ConstraintLayout>
+
+<!--   //======================-->
+<!--   //kontainer card-->
+   <LinearLayout
+       android:layout_marginTop="20dp"
+      android:orientation="vertical"
+       android:layout_width="match_parent"
+       android:layout_height="match_parent">
+      <androidx.constraintlayout.widget.ConstraintLayout
+          android:padding="16dp"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content">
+
+         <androidx.cardview.widget.CardView
+             android:id="@+id/card1"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             app:cardCornerRadius="15dp"
+             tools:ignore="MissingConstraints"
+             app:layout_constraintStart_toStartOf="parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:padding="16dp"
+                android:layout_height="match_parent">
+
+               <ImageView
+                   android:id="@+id/imageView"
+                   android:layout_width="122dp"
+                   android:layout_height="127dp"
+                   android:src="@drawable/dress_hangout"
+                   app:layout_constraintBottom_toBottomOf="parent"
+                   app:layout_constraintEnd_toEndOf="parent"
+                   app:layout_constraintStart_toStartOf="parent"
+                   app:layout_constraintTop_toTopOf="parent" />
+               <Button
+                   style="@style/Widget.Material3.Button.ElevatedButton"
+                   android:layout_margin="10dp"
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:text="Hangout"
+                   android:textColor="@color/black"
+                   android:fontFamily="@font/hedvig_letters_serif"
+                   tools:ignore="MissingConstraints"
+                   app:layout_constraintTop_toBottomOf="@id/imageView"
+                   app:layout_constraintStart_toStartOf="parent"
+                   app:layout_constraintEnd_toEndOf="parent"/>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+         </androidx.cardview.widget.CardView>
+
+
+         <androidx.cardview.widget.CardView
+             app:layout_constraintEnd_toEndOf="parent"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             app:cardCornerRadius="15dp"
+             tools:ignore="MissingConstraints">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:padding="16dp"
+
+                android:layout_height="match_parent">
+
+               <ImageView
+                   android:id="@+id/imageView2"
+                   android:layout_width="122dp"
+                   android:layout_height="127dp"
+                   android:src="@drawable/date_dress"
+                   app:layout_constraintBottom_toBottomOf="parent"
+                   app:layout_constraintEnd_toEndOf="parent"
+                   app:layout_constraintStart_toStartOf="parent"
+                   app:layout_constraintTop_toTopOf="parent" />
+               <Button
+                   style="@style/Widget.Material3.Button.ElevatedButton"
+                   android:layout_margin="10dp"
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:text="Date Dress"
+                   android:textColor="@color/black"
+                   android:fontFamily="@font/hedvig_letters_serif"
+                   tools:ignore="MissingConstraints"
+                   app:layout_constraintTop_toBottomOf="@id/imageView2"
+                   app:layout_constraintStart_toStartOf="parent"
+                   app:layout_constraintEnd_toEndOf="parent"/>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+         </androidx.cardview.widget.CardView>
+
+         <androidx.cardview.widget.CardView
+             android:layout_marginTop="16dp"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             app:cardCornerRadius="15dp"
+             tools:ignore="MissingConstraints"
+             app:layout_constraintStart_toStartOf="parent"
+             app:layout_constraintTop_toBottomOf="@id/card1"/>
+      </androidx.constraintlayout.widget.ConstraintLayout>
+
+      <Button
+          style="@style/Widget.Material3.Button.ElevatedButton"
+          android:layout_marginTop="120dp"
+          android:id="@+id/button2"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:text="Jadwalkan Outfit"
+          android:textColor="@color/black"
+          android:fontFamily="@font/hedvig_letters_serif"
+          />
+   </LinearLayout>
+</LinearLayout>
