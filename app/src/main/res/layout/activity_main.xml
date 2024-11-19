@@ -1,130 +1,309 @@
-<LinearLayout
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:background="#F8EAE5"
-    android:padding="16dp"
-    android:gravity="center_horizontal">
+    android:background="@drawable/background"
+    tools:context=".MainActivity">
 
-    <!-- Teks Judul -->
+    <!-- Jam di bagian atas -->
     <TextView
-        android:id="@+id/judul"
+        android:id="@+id/textClock"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="9:30"
+        android:textSize="18sp"
+        android:textColor="@android:color/black"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="16dp" />
+
+    <!-- Judul Koleksi Outfit -->
+    <TextView
+        android:id="@+id/title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Koleksi Outfit"
         android:textSize="24sp"
-        android:textColor="#000"
-        android:layout_marginBottom="24dp"
-        android:gravity="center" />
+        android:textStyle="bold"
+        android:textColor="@android:color/black"
+        app:layout_constraintTop_toBottomOf="@id/textClock"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="16dp" />
 
-    <!-- Grid Koleksi Outfit dengan Label Samping -->
-    <LinearLayout
+    <!-- Bagian untuk Top -->
+    <TextView
+        android:id="@+id/topLabel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:text="Top"
+        android:textSize="18sp"
+        android:textColor="@android:color/black"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/title"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="24dp" />
 
-        <!-- Label Vertikal (Top, S, Shoes) -->
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:gravity="center">
+    <LinearLayout
+        android:id="@+id/topImages"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toTopOf="@id/topLabel"
+        app:layout_constraintStart_toEndOf="@id/topLabel"
+        android:layout_marginStart="16dp">
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Top"
-                android:textSize="18sp"
-                android:textColor="#000"
-                android:layout_marginBottom="32dp" />
+        <ImageView
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:src="@drawable/ic_placeholder"
+            android:layout_marginEnd="8dp"
+            android:background="@drawable/rounded_background" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="S"
-                android:textSize="18sp"
-                android:textColor="#000"
-                android:layout_marginBottom="32dp" />
+        <ImageView
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:src="@drawable/ic_placeholder"
+            android:layout_marginEnd="8dp"
+            android:background="@drawable/rounded_background" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Shoes"
-                android:textSize="18sp"
-                android:textColor="#000" />
+        <ImageView
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:src="@drawable/ic_placeholder"
+            android:layout_marginEnd="8dp"
+            android:background="@drawable/rounded_background" />
 
-        </LinearLayout>
+        <ImageView
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:src="@drawable/ic_placeholder"
+            android:layout_marginEnd="8dp"
+            android:background="@drawable/rounded_background" />
 
-        <!-- Grid Gambar Outfit -->
-        <GridLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:rowCount="3"
-            android:columnCount="2"
-            android:layout_marginStart="16dp"
-            android:alignmentMode="alignMargins"
-            android:columnOrderPreserved="false"
-            android:layout_gravity="center">
+        <ImageView
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:src="@drawable/ic_placeholder"
+            android:layout_marginEnd="8dp"
+            android:background="@drawable/rounded_background" />
 
-            <!-- Item Gambar untuk setiap kategori -->
-            <ImageView
-                android:layout_width="80dp"
-                android:layout_height="80dp"
-                android:src="@drawable/ic_image_placeholder"
-                android:background="@drawable/bg_image"
-                android:layout_margin="8dp"
-                android:contentDescription="Gambar Top 1" />
-
-            <ImageView
-                android:layout_width="80dp"
-                android:layout_height="80dp"
-                android:src="@drawable/ic_image_placeholder"
-                android:background="@drawable/bg_image"
-                android:layout_margin="8dp"
-                android:contentDescription="Gambar Top 2" />
-
-            <ImageView
-                android:layout_width="80dp"
-                android:layout_height="80dp"
-                android:src="@drawable/ic_image_placeholder"
-                android:background="@drawable/bg_image"
-                android:layout_margin="8dp"
-                android:contentDescription="Gambar S 1" />
-
-            <ImageView
-                android:layout_width="80dp"
-                android:layout_height="80dp"
-                android:src="@drawable/ic_image_placeholder"
-                android:background="@drawable/bg_image"
-                android:layout_margin="8dp"
-                android:contentDescription="Gambar S 2" />
-
-            <ImageView
-                android:layout_width="80dp"
-                android:layout_height="80dp"
-                android:src="@drawable/ic_image_placeholder"
-                android:background="@drawable/bg_image"
-                android:layout_margin="8dp"
-                android:contentDescription="Gambar Shoes 1" />
-
-            <ImageView
-                android:layout_width="80dp"
-                android:layout_height="80dp"
-                android:src="@drawable/ic_image_placeholder"
-                android:background="@drawable/bg_image"
-                android:layout_margin="8dp"
-                android:contentDescription="Gambar Shoes 2" />
-        </GridLayout>
+        <ImageView
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:src="@drawable/ic_placeholder"
+            android:layout_marginEnd="8dp"
+            android:background="@drawable/rounded_background" />
     </LinearLayout>
 
-    <!-- Tombol Kamera -->
-    <ImageButton
-        android:id="@+id/tombol_kamera"
+    <!-- Bagian untuk Bottoms -->
+    <TextView
+        android:id="@+id/bottomLabel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@drawable/ic_camera"
-        android:background="?attr/selectableItemBackgroundBorderless"
-        android:layout_marginTop="24dp"
-        android:contentDescription="Tombol Kamera" />
-</LinearLayout>
+        android:text="Bottoms"
+        android:textSize="18sp"
+        android:textColor="@android:color/black"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/topImages"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="24dp" />
+
+    <LinearLayout
+        android:id="@+id/bottomImages"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toTopOf="@id/bottomLabel"
+        app:layout_constraintStart_toEndOf="@id/bottomLabel"
+        android:layout_marginStart="16dp">
+
+        <ImageView
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:src="@drawable/ic_placeholder"
+            android:layout_marginEnd="8dp"
+            android:background="@drawable/rounded_background" />
+
+        <ImageView
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:src="@drawable/ic_placeholder"
+            android:layout_marginEnd="8dp"
+            android:background="@drawable/rounded_background" />
+
+        <ImageView
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:src="@drawable/ic_placeholder"
+            android:layout_marginEnd="8dp"
+            android:background="@drawable/rounded_background" />
+
+        <ImageView
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:src="@drawable/ic_placeholder"
+            android:layout_marginEnd="8dp"
+            android:background="@drawable/rounded_background" />
+
+        <ImageView
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:src="@drawable/ic_placeholder"
+            android:layout_marginEnd="8dp"
+            android:background="@drawable/rounded_background" />
+
+        <ImageView
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:src="@drawable/ic_placeholder"
+            android:layout_marginEnd="8dp"
+            android:background="@drawable/rounded_background" />
+    </LinearLayout>
+
+    <!-- Bagian untuk Accessories -->
+    <TextView
+        android:id="@+id/accessoriesLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Accessories"
+        android:textSize="18sp"
+        android:textColor="@android:color/black"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/bottomImages"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="24dp" />
+
+    <LinearLayout
+        android:id="@+id/accessoriesImages"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toTopOf="@id/accessoriesLabel"
+        app:layout_constraintStart_toEndOf="@id/accessoriesLabel"
+        android:layout_marginStart="16dp">
+
+        <ImageView
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:src="@drawable/ic_placeholder"
+            android:layout_marginEnd="8dp"
+            android:background="@drawable/rounded_background" />
+
+        <ImageView
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:src="@drawable/ic_placeholder"
+            android:layout_marginEnd="8dp"
+            android:background="@drawable/rounded_background" />
+
+        <ImageView
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:src="@drawable/ic_placeholder"
+            android:layout_marginEnd="8dp"
+            android:background="@drawable/rounded_background" />
+
+        <ImageView
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:src="@drawable/ic_placeholder"
+            android:layout_marginEnd="8dp"
+            android:background="@drawable/rounded_background" />
+
+        <ImageView
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:src="@drawable/ic_placeholder"
+            android:layout_marginEnd="8dp"
+            android:background="@drawable/rounded_background" />
+
+        <ImageView
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:src="@drawable/ic_placeholder"
+            android:layout_marginEnd="8dp"
+            android:background="@drawable/rounded_background" />
+    </LinearLayout>
+
+    <!-- Bagian untuk Shoes -->
+    <TextView
+        android:id="@+id/shoesLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Shoes"
+        android:textSize="18sp"
+        android:textColor="@android:color/black"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/accessoriesImages"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="24dp" />
+
+    <LinearLayout
+        android:id="@+id/shoesImages"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toTopOf="@id/shoesLabel"
+        app:layout_constraintStart_toEndOf="@id/shoesLabel"
+        android:layout_marginStart="16dp">
+
+        <ImageView
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:src="@drawable/ic_placeholder"
+            android:layout_marginEnd="8dp"
+            android:background="@drawable/rounded_background" />
+
+        <ImageView
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:src="@drawable/ic_placeholder"
+            android:layout_marginEnd="8dp"
+            android:background="@drawable/rounded_background" />
+
+        <ImageView
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:src="@drawable/ic_placeholder"
+            android:layout_marginEnd="8dp"
+            android:background="@drawable/rounded_background" />
+
+        <ImageView
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:src="@drawable/ic_placeholder"
+            android:layout_marginEnd="8dp"
+            android:background="@drawable/rounded_background" />
+
+        <ImageView
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:src="@drawable/ic_placeholder"
+            android:layout_marginEnd="8dp"
+            android:background="@drawable/rounded_background" />
+
+        <ImageView
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:src="@drawable/ic_placeholder"
+            android:layout_marginEnd="8dp"
+            android:background="@drawable/rounded_background" />
+    </LinearLayout>
+
+    <!-- Ikon kamera di bagian bawah -->
+    <ImageView
+        android:id="@+id/cameraIcon"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:src="@drawable/camera"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginBottom="24dp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
