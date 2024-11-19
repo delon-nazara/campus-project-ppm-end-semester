@@ -1,20 +1,12 @@
 package com.example.proyekakhirlabpemrogramanmobile
 
 import android.content.Intent
-import android.graphics.drawable.InsetDrawable
-import android.net.Uri
-import android.os.Build
 import android.os.Bundle
-import android.util.TypedValue
 import android.widget.Button
 import android.widget.PopupMenu
 import android.widget.TextView
-import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
-import androidx.activity.result.ActivityResultLauncher
-import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
-import androidx.appcompat.view.menu.MenuBuilder
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.google.android.material.tabs.TabLayout

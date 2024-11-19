@@ -39,4 +39,12 @@
     <string name="close">Close</string>
     <string name="capture">Capture</string>
 
+    <string-array name="collection_types">
+        <item>Shirt</item>
+        <item>Pants</item>
+        <item>Shoes</item>
+        <item>Accessories</item>
+    </string-array>
+
+
 </resources>
