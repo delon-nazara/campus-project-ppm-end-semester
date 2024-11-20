@@ -3,6 +3,7 @@ package com.example.proyekakhirlabpemrogramanmobile
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
+import android.widget.PopupMenu
 import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -26,6 +27,26 @@ class BackendCollectionScreenActivity : AppCompatActivity() {
             val intent = Intent(this, BackendHomeScreenActivity::class.java)
             intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
             startActivity(intent)
+        }
+
+        val addCollectionButton = findViewById<Button>(R.id.buttonAddCollection)
+        addCollectionButton.setOnClickListener {
+            val popupMenu = PopupMenu(this, addCollectionButton)
+            popupMenu.menuInflater.inflate(R.menu.add_collection_menu, popupMenu.menu)
+
+            popupMenu.setOnMenuItemClickListener { item ->
+                when (item.itemId) {
+                    R.id.camera -> {
+                        val intent = Intent(this, BackendCameraScreenActivity::class.java)
+                        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
+                        startActivity(intent)
+                        true
+                    }
+                    else -> false
+                }
+            }
+
+            popupMenu.show()
         }
 
         // content tab (temporary)
@@ -68,3 +89,4 @@ class BackendCollectionScreenActivity : AppCompatActivity() {
 
     }
 }
+
