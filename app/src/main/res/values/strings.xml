@@ -53,5 +53,9 @@
     <string name="shoes">Shoes</string>
     <string name="random_all">Random All</string>
     <string name="submit">Submit</string>
+    
+    <string name="schedule_title">Penjadwalan Outfit</string>
+    <string name="schedule_head">Buat dan rencanakan outit yang akan kamu gunakan sesuai dengan jadwalmu</string>
+    <string name="schedule_date">Sabtu, 7 Januari 2024</string>
 
 </resources>
