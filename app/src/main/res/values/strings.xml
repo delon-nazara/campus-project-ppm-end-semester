@@ -46,5 +46,12 @@
         <item>Accessories</item>
     </string-array>
 
+    <string name="judul_rekomendasi">REKOMENDASI\nOUTFIT</string>
+    <string name="top">Top</string>
+    <string name="bottoms">Bottoms</string>
+    <string name="accessories">Accessories</string>
+    <string name="shoes">Shoes</string>
+    <string name="random_all">Random All</string>
+    <string name="submit">Submit</string>
 
 </resources>
