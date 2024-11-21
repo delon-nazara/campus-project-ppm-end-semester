@@ -1,8 +1,9 @@
-// MainActivity.kt
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.mywardrobe.OutfitAdapter
+import com.example.proyekakhirlabpemrogramanmobile.R
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 
 class MainActivity : AppCompatActivity() {
@@ -14,20 +15,15 @@ class MainActivity : AppCompatActivity() {
         val recyclerView = findViewById<RecyclerView>(R.id.recyclerView)
         val fabAddOutfit = findViewById<FloatingActionButton>(R.id.fabAddOutfit)
 
-        // Sample data outfit images
-        val outfits = listOf(
-            Outfit(R.drawable.outfit1),
-            Outfit(R.drawable.outfit2),
-            Outfit(R.drawable.outfit3)
-            // Tambahkan gambar lain di sini
-        )
 
+        // Adapter dan layout manager
         val adapter = OutfitAdapter(outfits)
         recyclerView.adapter = adapter
-        recyclerView.layoutManager = GridLayoutManager(this, 4)
+        recyclerView.layoutManager = GridLayoutManager(this, 4) // Grid dengan 4 kolom
 
         fabAddOutfit.setOnClickListener {
             // Logika untuk menambahkan outfit baru
+            // Bisa membuka dialog atau activity baru untuk memilih gambar
         }
     }
 }

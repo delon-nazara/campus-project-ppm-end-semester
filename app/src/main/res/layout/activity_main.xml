@@ -8,6 +8,12 @@
     android:background="@drawable/background"
     tools:context=".MainActivity">
 
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+
     <!-- Jam di bagian atas -->
     <TextView
         android:id="@+id/textClock"
@@ -60,44 +66,37 @@
         <ImageView
             android:layout_width="60dp"
             android:layout_height="60dp"
-            android:src="@drawable/ic_placeholder"
-            android:layout_marginEnd="8dp"
-            android:background="@drawable/rounded_background" />
+            android:layout_marginEnd="8dp" />
 
         <ImageView
             android:layout_width="60dp"
             android:layout_height="60dp"
-            android:src="@drawable/ic_placeholder"
-            android:layout_marginEnd="8dp"
-            android:background="@drawable/rounded_background" />
+            android:src="@drawable/pictures_folders"
+            android:layout_marginEnd="8dp" />
 
         <ImageView
             android:layout_width="60dp"
             android:layout_height="60dp"
-            android:src="@drawable/ic_placeholder"
-            android:layout_marginEnd="8dp"
-            android:background="@drawable/rounded_background" />
+            android:src="@drawable/pictures_folders"
+            android:layout_marginEnd="8dp" />
 
         <ImageView
             android:layout_width="60dp"
             android:layout_height="60dp"
-            android:src="@drawable/ic_placeholder"
-            android:layout_marginEnd="8dp"
-            android:background="@drawable/rounded_background" />
+            android:src="@drawable/pictures_folders"
+            android:layout_marginEnd="8dp" />
 
         <ImageView
             android:layout_width="60dp"
             android:layout_height="60dp"
-            android:src="@drawable/ic_placeholder"
-            android:layout_marginEnd="8dp"
-            android:background="@drawable/rounded_background" />
+            android:src="@drawable/pictures_folders"
+            android:layout_marginEnd="8dp" />
 
         <ImageView
             android:layout_width="60dp"
             android:layout_height="60dp"
-            android:src="@drawable/ic_placeholder"
-            android:layout_marginEnd="8dp"
-            android:background="@drawable/rounded_background" />
+            android:src="@drawable/pictures_folders"
+            android:layout_marginEnd="8dp" />
     </LinearLayout>
 
     <!-- Bagian untuk Bottoms -->
@@ -125,44 +124,37 @@
         <ImageView
             android:layout_width="60dp"
             android:layout_height="60dp"
-            android:src="@drawable/ic_placeholder"
-            android:layout_marginEnd="8dp"
-            android:background="@drawable/rounded_background" />
+            android:layout_marginEnd="8dp" />
 
         <ImageView
             android:layout_width="60dp"
             android:layout_height="60dp"
-            android:src="@drawable/ic_placeholder"
-            android:layout_marginEnd="8dp"
-            android:background="@drawable/rounded_background" />
+            android:src="@drawable/pictures_folders"
+            android:layout_marginEnd="8dp" />
 
         <ImageView
             android:layout_width="60dp"
             android:layout_height="60dp"
-            android:src="@drawable/ic_placeholder"
-            android:layout_marginEnd="8dp"
-            android:background="@drawable/rounded_background" />
+            android:src="@drawable/pictures_folders"
+            android:layout_marginEnd="8dp" />
 
         <ImageView
             android:layout_width="60dp"
             android:layout_height="60dp"
-            android:src="@drawable/ic_placeholder"
-            android:layout_marginEnd="8dp"
-            android:background="@drawable/rounded_background" />
+            android:src="@drawable/pictures_folders"
+            android:layout_marginEnd="8dp" />
 
         <ImageView
             android:layout_width="60dp"
             android:layout_height="60dp"
-            android:src="@drawable/ic_placeholder"
-            android:layout_marginEnd="8dp"
-            android:background="@drawable/rounded_background" />
+            android:src="@drawable/pictures_folders"
+            android:layout_marginEnd="8dp" />
 
         <ImageView
             android:layout_width="60dp"
             android:layout_height="60dp"
-            android:src="@drawable/ic_placeholder"
-            android:layout_marginEnd="8dp"
-            android:background="@drawable/rounded_background" />
+            android:src="@drawable/pictures_folders"
+            android:layout_marginEnd="8dp" />
     </LinearLayout>
 
     <!-- Bagian untuk Accessories -->
@@ -190,44 +182,37 @@
         <ImageView
             android:layout_width="60dp"
             android:layout_height="60dp"
-            android:src="@drawable/ic_placeholder"
-            android:layout_marginEnd="8dp"
-            android:background="@drawable/rounded_background" />
+            android:layout_marginEnd="8dp" />
 
         <ImageView
             android:layout_width="60dp"
             android:layout_height="60dp"
-            android:src="@drawable/ic_placeholder"
-            android:layout_marginEnd="8dp"
-            android:background="@drawable/rounded_background" />
+            android:src="@drawable/pictures_folders"
+            android:layout_marginEnd="8dp" />
 
         <ImageView
             android:layout_width="60dp"
             android:layout_height="60dp"
-            android:src="@drawable/ic_placeholder"
-            android:layout_marginEnd="8dp"
-            android:background="@drawable/rounded_background" />
+            android:src="@drawable/pictures_folders"
+            android:layout_marginEnd="8dp" />
 
         <ImageView
             android:layout_width="60dp"
             android:layout_height="60dp"
-            android:src="@drawable/ic_placeholder"
-            android:layout_marginEnd="8dp"
-            android:background="@drawable/rounded_background" />
+            android:src="@drawable/pictures_folders"
+            android:layout_marginEnd="8dp" />
 
         <ImageView
             android:layout_width="60dp"
             android:layout_height="60dp"
-            android:src="@drawable/ic_placeholder"
-            android:layout_marginEnd="8dp"
-            android:background="@drawable/rounded_background" />
+            android:src="@drawable/pictures_folders"
+            android:layout_marginEnd="8dp" />
 
         <ImageView
             android:layout_width="60dp"
             android:layout_height="60dp"
-            android:src="@drawable/ic_placeholder"
-            android:layout_marginEnd="8dp"
-            android:background="@drawable/rounded_background" />
+            android:src="@drawable/pictures_folders"
+            android:layout_marginEnd="8dp" />
     </LinearLayout>
 
     <!-- Bagian untuk Shoes -->
@@ -255,44 +240,37 @@
         <ImageView
             android:layout_width="60dp"
             android:layout_height="60dp"
-            android:src="@drawable/ic_placeholder"
-            android:layout_marginEnd="8dp"
-            android:background="@drawable/rounded_background" />
+            android:layout_marginEnd="8dp" />
 
         <ImageView
             android:layout_width="60dp"
             android:layout_height="60dp"
-            android:src="@drawable/ic_placeholder"
-            android:layout_marginEnd="8dp"
-            android:background="@drawable/rounded_background" />
+            android:src="@drawable/pictures_folders"
+            android:layout_marginEnd="8dp" />
 
         <ImageView
             android:layout_width="60dp"
             android:layout_height="60dp"
-            android:src="@drawable/ic_placeholder"
-            android:layout_marginEnd="8dp"
-            android:background="@drawable/rounded_background" />
+            android:src="@drawable/pictures_folders"
+            android:layout_marginEnd="8dp" />
 
         <ImageView
             android:layout_width="60dp"
             android:layout_height="60dp"
-            android:src="@drawable/ic_placeholder"
-            android:layout_marginEnd="8dp"
-            android:background="@drawable/rounded_background" />
+            android:src="@drawable/pictures_folders"
+            android:layout_marginEnd="8dp" />
 
         <ImageView
             android:layout_width="60dp"
             android:layout_height="60dp"
-            android:src="@drawable/ic_placeholder"
-            android:layout_marginEnd="8dp"
-            android:background="@drawable/rounded_background" />
+            android:src="@drawable/pictures_folders"
+            android:layout_marginEnd="8dp" />
 
         <ImageView
             android:layout_width="60dp"
             android:layout_height="60dp"
-            android:src="@drawable/ic_placeholder"
-            android:layout_marginEnd="8dp"
-            android:background="@drawable/rounded_background" />
+            android:src="@drawable/pictures_folders"
+            android:layout_marginEnd="8dp" />
     </LinearLayout>
 
     <!-- Ikon kamera di bagian bawah -->
@@ -305,5 +283,15 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginBottom="24dp" />
+
+
+    <!-- Tambahkan FAB Add Outfit -->
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fabAddOutfit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_margin="16dp"
+        android:layout_alignParentBottom="true"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
