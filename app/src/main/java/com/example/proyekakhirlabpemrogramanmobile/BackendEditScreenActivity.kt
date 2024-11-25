@@ -99,7 +99,7 @@ class BackendEditScreenActivity : AppCompatActivity() {
             } else {
                 val imageName = imageNameInput.text.toString()
                 val imageType = imageTypeSpinner.selectedItem.toString()
-                val fileName = "$imageType - $imageName.jpeg"
+                val fileName = "$imageType - $imageName"
                 val file = File(filesDir, fileName)
                 FileOutputStream(file).use {
                     croppedImageBitmap?.compress(Bitmap.CompressFormat.JPEG, 100, it)
@@ -125,7 +125,7 @@ class BackendEditScreenActivity : AppCompatActivity() {
         MediaManager.init(this, config)
 
         val userEmail = FirebaseAuth.getInstance().currentUser?.email ?: "unknown_user"
-        val folderPath = "Project/$userEmail"
+        val folderPath = "My Wardrobe/$userEmail"
 
         MediaManager
             .get()

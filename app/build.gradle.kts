@@ -78,4 +78,7 @@ dependencies {
     // Image Cropper Library
     implementation(libs.android.image.cropper)
 
+    // Glide Library
+    implementation(libs.glide)
+    annotationProcessor(libs.compiler)
 }
