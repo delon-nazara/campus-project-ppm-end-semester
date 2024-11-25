@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FDF1ED"
+    tools:context=".DetailOutfit">
+
+    <!-- Back Button -->
+
+    <!-- Title -->
+
+    <!-- Top Section -->
+
+    <ImageView
+        android:id="@+id/backButton"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="24dp"
+        android:contentDescription="Back"
+        android:src="@drawable/ic_arrow_left"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/titleTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="20dp"
+        android:fontFamily="@font/hedvig_letters_serif"
+        android:text="Detail Outfit HANGOUT"
+        android:textColor="#000"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/backButton"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/topText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="Top"
+        android:textColor="#000"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/titleTextView"
+        app:layout_constraintStart_margin="16dp" />
+
+    <ImageView
+        android:id="@+id/topImage"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/ic_placeholder"
+        app:layout_constraintStart_toStartOf="@+id/topText"
+        app:layout_constraintTop_toBottomOf="@+id/topText" />
+
+    <!-- Bottom Section -->
+    <TextView
+        android:id="@+id/bottomText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="Bottom"
+        android:textColor="#000"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/topImage"
+        app:layout_constraintStart_margin="16dp" />
+
+    <ImageView
+        android:id="@+id/bottomImage"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/ic_placeholder"
+        app:layout_constraintStart_toStartOf="@+id/bottomText"
+        app:layout_constraintTop_toBottomOf="@+id/bottomText" />
+
+    <!-- Accessories Section -->
+    <TextView
+        android:id="@+id/accessoriesText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="Accessories"
+        android:textColor="#000"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/bottomImage"
+        app:layout_constraintStart_margin="16dp" />
+
+    <ImageView
+        android:id="@+id/accessoriesImage"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/ic_placeholder"
+        app:layout_constraintStart_toStartOf="@+id/accessoriesText"
+        app:layout_constraintTop_toBottomOf="@+id/accessoriesText" />
+
+    <!-- Shoes Section -->
+    <TextView
+        android:id="@+id/shoesText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="Shoes"
+        android:textColor="#000"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/accessoriesImage"
+        app:layout_constraintStart_margin="16dp" />
+
+    <ImageView
+        android:id="@+id/shoesImage"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/ic_placeholder"
+        app:layout_constraintStart_toStartOf="@+id/shoesText"
+        app:layout_constraintTop_toBottomOf="@+id/shoesText" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

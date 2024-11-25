@@ -34,16 +34,18 @@
             android:layout_marginBottom="35dp"/>
 
         <!-- Image Icon -->
-        <ImageView
-            android:id="@+id/outfit_icon"
-            android:layout_width="280dp"
-            android:layout_height="250dp"
-            android:src="@drawable/outfit_icon"
-            android:contentDescription="Outfit Icon"
-            android:layout_marginTop="20dp"
-            android:layout_marginBottom="20dp"/>
 
         <!-- Start Button -->
+
+        <ImageView
+            android:id="@+id/outfit_icon"
+            android:layout_width="350dp"
+            android:layout_height="350dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:contentDescription="Outfit Icon"
+            android:src="@drawable/outfit_icon" />
+
         <Button
             android:id="@+id/start_button"
             android:layout_width="187dp"

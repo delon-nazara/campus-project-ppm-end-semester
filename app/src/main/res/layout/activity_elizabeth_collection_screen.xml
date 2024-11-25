@@ -9,18 +9,6 @@
     android:background="@drawable/background"
     tools:context=".ElizabethCollectionScreenActivity">
 
-    <!-- Jam di bagian atas -->
-    <TextView
-        android:id="@+id/textClock"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="9:30"
-        android:textSize="18sp"
-        android:textColor="@android:color/black"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="16dp" />
 
     <!-- Judul Koleksi Outfit -->
     <TextView
@@ -28,10 +16,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Koleksi Outfit"
+        android:fontFamily="@font/hedvig_letters_serif"
         android:textSize="24sp"
         android:textStyle="bold"
         android:textColor="@android:color/black"
-        app:layout_constraintTop_toBottomOf="@id/textClock"
+        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginTop="16dp" />
