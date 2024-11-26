@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/collectionMenu"
+        android:icon="@drawable/collection_icon"
+        android:title="Collection" />
+    <item
+        android:id="@+id/outfitMenu"
+        android:icon="@drawable/outfit_icon"
+        android:title="Outfit" />
+    <item
+        android:id="@+id/scheduleMenu"
+        android:icon="@drawable/schedule_icon"
+        android:title="Schedule" />
+    <item
+        android:id="@+id/profileMenu"
+        android:icon="@drawable/profile_icon"
+        android:title="Profile" />
+</menu>

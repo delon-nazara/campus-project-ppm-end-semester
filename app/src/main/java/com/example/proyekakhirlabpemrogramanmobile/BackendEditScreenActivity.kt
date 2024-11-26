@@ -6,11 +6,14 @@ import android.graphics.Bitmap
 import android.graphics.BitmapFactory
 import android.net.Uri
 import android.os.Bundle
+import android.provider.MediaStore.Audio.Media
 import android.util.Log
+import android.view.View
 import android.widget.Button
 import android.widget.EditText
 import android.widget.ImageButton
 import android.widget.ImageView
+import android.widget.ProgressBar
 import android.widget.Spinner
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
@@ -22,6 +25,7 @@ import com.cloudinary.android.MediaManager
 import com.cloudinary.android.callback.ErrorInfo
 import com.cloudinary.android.callback.UploadCallback
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.firestore.FirebaseFirestore
 import io.github.cdimascio.dotenv.dotenv
 import java.io.File
 import java.io.FileOutputStream
@@ -29,6 +33,7 @@ import java.io.FileOutputStream
 class BackendEditScreenActivity : AppCompatActivity() {
 
     private lateinit var cropImageView: CropImageView
+    private lateinit var progressBar: ProgressBar
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -74,6 +79,7 @@ class BackendEditScreenActivity : AppCompatActivity() {
             showSaveImageDialog(oriImagePath)
         }
 
+        progressBar = findViewById(R.id.progressBar)
     }
 
     private fun showSaveImageDialog(oriImagePath: String) {
@@ -97,32 +103,27 @@ class BackendEditScreenActivity : AppCompatActivity() {
             if (imageNameInput.text.isEmpty()) {
                 Toast.makeText(applicationContext, "Name cannot be empty!", Toast.LENGTH_SHORT).show()
             } else {
-                val imageName = imageNameInput.text.toString()
-                val imageType = imageTypeSpinner.selectedItem.toString()
+                val imageName = imageNameInput.text.toString().lowercase()
+                val imageType = imageTypeSpinner.selectedItem.toString().lowercase()
                 val fileName = "$imageType - $imageName"
                 val file = File(filesDir, fileName)
                 FileOutputStream(file).use {
                     croppedImageBitmap?.compress(Bitmap.CompressFormat.JPEG, 100, it)
                 }
                 Toast.makeText(applicationContext, "Upload Image...", Toast.LENGTH_SHORT).show()
-                uploadImageToCloudinary(file, fileName, oriImagePath)
+                progressBar.visibility = View.VISIBLE
+                uploadImageToCloudinary(file, fileName, oriImagePath, imageType)
             }
         }
 
         dialog.show()
     }
 
-    private fun uploadImageToCloudinary(file: File, fileName: String, oriImagePath: String) {
+    private fun uploadImageToCloudinary(file: File, fileName: String, oriImagePath: String, imageType: String) {
         val dotenv = dotenv {
             directory = "/assets"
             filename = "env"
         }
-
-        val config = hashMapOf(
-            "cloud_name" to dotenv["CLOUD_NAME"],
-            "secure" to true
-        )
-        MediaManager.init(this, config)
 
         val userEmail = FirebaseAuth.getInstance().currentUser?.email ?: "unknown_user"
         val folderPath = "My Wardrobe/$userEmail"
@@ -145,11 +146,25 @@ class BackendEditScreenActivity : AppCompatActivity() {
                 }
 
                 override fun onSuccess(requestId: String, resultData: Map<*, *>) {
+                    progressBar.visibility = View.GONE
                     Toast.makeText(applicationContext, "Upload Successful", Toast.LENGTH_SHORT).show()
                     Log.d("Cloudinary", "Upload successful: $resultData")
                     file.delete()
                     File(filesDir, oriImagePath).delete()
-                    val intent = Intent(applicationContext, BackendCollectionScreenActivity ::class.java)
+
+                    val db = FirebaseFirestore.getInstance()
+                    db.collection("users")
+                        .document(userEmail)
+                        .collection(imageType)
+                        .add(mapOf("url" to resultData["secure_url"].toString()))
+                        .addOnSuccessListener {
+                            Log.d("Firestore", "DocumentSnapshot successfully written!")
+                        }
+                        .addOnFailureListener { e ->
+                            Log.w("Firestore", "Error writing document", e)
+                        }
+
+                    val intent = Intent(applicationContext, BackendCollectionScreenActivity::class.java)
                     intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
                     startActivity(intent)
                 }
