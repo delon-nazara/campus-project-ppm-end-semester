@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">ProyekAkhirLabPemrogramanMobile</string>
+    <string name="fab_add_outfit">Tambah pakaian</string>
+
 </resources>
