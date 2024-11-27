@@ -1,14 +1,12 @@
 // OutfitAdapter.kt
 package com.example.proyekakhirlabpemrogramanmobile
 
-import android.os.Build.VERSION_CODES.R
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.example.proyekakhirlabpemrogramanmobile.R
 
 
 // Adapter untuk RecyclerView
@@ -21,9 +19,10 @@ class OutfitAdapter(private val outfitList: List<Outfit>) :
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): OutfitViewHolder {
-        val view = LayoutInflater.from(parent.context).inflate(R.layout.activity_outfit_adapter, parent, false)
-        return OutfitViewHolder(view)
+        val itemView = LayoutInflater.from(parent.context).inflate(R.layout.item_outfit, parent, false)
+        return OutfitViewHolder(itemView)
     }
+
 
     override fun onBindViewHolder(holder: OutfitViewHolder, position: Int) {
         val outfit = outfitList[position]

@@ -1,11 +1,10 @@
-package layout
-
+package com.example.proyekakhirlabpemrogramanmobile // Pastikan MainActivity ada di paket ini
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.mywardrobe.OutfitAdapter
+import com.example.proyekakhirlabpemrogramanmobile.OutfitAdapter
 import com.example.proyekakhirlabpemrogramanmobile.R
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 
@@ -39,11 +38,10 @@ class MainActivity : AppCompatActivity() {
 
     // Metode untuk memuat data dari database (contoh, bisa disesuaikan dengan implementasi Anda)
     private fun loadOutfitsFromDatabase(): List<Outfit> {
-        // Contoh data statis (ganti dengan logika pengambilan data yang sebenarnya)
         return listOf(
-            Outfit("Outfit 1", "Deskripsi 1", R.drawable.outfit1), // Gambar dari drawable
-            Outfit("Outfit 2", "Deskripsi 2", R.drawable.outfit2),
-            Outfit("Outfit 3", "Deskripsi 3", R.drawable.outfit3)
+            Outfit("Outfit 1", "Deskripsi 1", R.drawable.top), // Gambar dari drawable
+            Outfit("Outfit 2", "Deskripsi 2", R.drawable.top2),
+            Outfit("Outfit 3", "Deskripsi 3", R.drawable.top3)
         )
     }
 }
