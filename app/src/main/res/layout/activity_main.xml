@@ -33,11 +33,11 @@
     <!-- Outfit Icon -->
     <ImageView
         android:id="@+id/outfitIcon"
-        android:layout_width="250dp"
-        android:layout_height="250dp"
-        android:src="@drawable/outfit_icon"
+        android:layout_width="350dp"
+        android:layout_height="350dp"
+        android:src="@drawable/welcome_image"
         android:contentDescription="@string/content_description_icon"
-        android:layout_marginVertical="50dp"/>
+        android:layout_marginVertical="10dp"/>
 
     <!-- Start Button -->
     <Button

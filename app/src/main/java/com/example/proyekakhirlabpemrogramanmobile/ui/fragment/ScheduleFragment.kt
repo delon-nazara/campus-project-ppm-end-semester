@@ -1,4 +1,4 @@
-package com.example.proyekakhirlabpemrogramanmobile
+package com.example.proyekakhirlabpemrogramanmobile.ui.fragment
 
 import android.app.DatePickerDialog
 import android.os.Bundle
@@ -8,6 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import com.example.proyekakhirlabpemrogramanmobile.R
 import java.text.SimpleDateFormat
 import java.util.Calendar
 import java.util.Locale

@@ -8,7 +8,7 @@
     android:background="@drawable/screen_background"
     android:gravity="center"
     android:orientation="vertical"
-    tools:context=".SignupActivity">
+    tools:context=".ui.activity.SignupActivity">
 
     <!-- Signup Title -->
     <TextView

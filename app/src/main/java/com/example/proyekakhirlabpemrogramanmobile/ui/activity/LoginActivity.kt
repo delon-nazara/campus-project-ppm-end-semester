@@ -1,4 +1,4 @@
-package com.example.proyekakhirlabpemrogramanmobile
+package com.example.proyekakhirlabpemrogramanmobile.ui.activity
 
 import android.content.Intent
 import android.os.Bundle
@@ -7,17 +7,16 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import com.example.proyekakhirlabpemrogramanmobile.databinding.ActivitySignupBinding
+import com.example.proyekakhirlabpemrogramanmobile.R
+import com.example.proyekakhirlabpemrogramanmobile.databinding.ActivityLoginBinding
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseAuthInvalidCredentialsException
-import com.google.firebase.auth.FirebaseAuthUserCollisionException
-import com.google.firebase.auth.FirebaseAuthWeakPasswordException
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
 
-class SignupActivity : AppCompatActivity() {
+class LoginActivity : AppCompatActivity() {
 
-    private lateinit var binding: ActivitySignupBinding
+    private lateinit var binding: ActivityLoginBinding
     private lateinit var auth: FirebaseAuth
     private var showPassword = true
 
@@ -26,7 +25,7 @@ class SignupActivity : AppCompatActivity() {
 
         auth = Firebase.auth
 
-        binding = ActivitySignupBinding.inflate(layoutInflater)
+        binding = ActivityLoginBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
         binding.passwordToggle.setOnClickListener {
@@ -41,7 +40,7 @@ class SignupActivity : AppCompatActivity() {
             binding.passwordInput.setSelection(binding.passwordInput.text.length)
         }
 
-        binding.signupButton.setOnClickListener {
+        binding.loginButton.setOnClickListener {
             val userEmail = binding.emailInput.text.toString()
             val userPassword = binding.passwordInput.text.toString()
 
@@ -53,36 +52,30 @@ class SignupActivity : AppCompatActivity() {
             } else {
                 hideEmailError()
                 hidePasswordError()
-                registerUser(userEmail, userPassword)
+                loginUser(userEmail, userPassword)
             }
         }
 
-        binding.loginButton.setOnClickListener {
-            startLoginActivity()
+        binding.signupButton.setOnClickListener {
+            startSignupActivity()
         }
     }
 
-    private fun registerUser(email: String, password: String) {
+    private fun loginUser(email: String, password: String) {
         showLoading()
-        auth.createUserWithEmailAndPassword(email, password)
+        auth.signInWithEmailAndPassword(email, password)
             .addOnCompleteListener(this) { task ->
             hideLoading()
             if (task.isSuccessful) {
-                showToast(getString(R.string.signup_successful))
+                showToast(getString(R.string.login_successful))
                 startHomeActivity()
             } else {
                 when (val exception = task.exception) {
-                    is FirebaseAuthUserCollisionException -> {
-                        showPasswordError(getString(R.string.signup_error_email_used))
-                    }
-                    is FirebaseAuthWeakPasswordException -> {
-                        showPasswordError(getString(R.string.signup_error_short_password))
-                    }
                     is FirebaseAuthInvalidCredentialsException -> {
-                        showPasswordError(getString(R.string.signup_error_invalid_credential))
+                        showPasswordError(getString(R.string.login_error_invalid_credential))
                     }
                     else -> {
-                        showPasswordError(getString(R.string.signup_error_general, exception?.localizedMessage))
+                        showPasswordError(getString(R.string.login_error_general, exception?.localizedMessage))
                     }
                 }
             }
@@ -147,8 +140,8 @@ class SignupActivity : AppCompatActivity() {
         Toast.makeText(this, toastMessage, Toast.LENGTH_LONG).show()
     }
 
-    private fun startLoginActivity() {
-        startActivity(Intent(this, LoginActivity::class.java).apply {
+    private fun startSignupActivity() {
+        startActivity(Intent(this, SignupActivity::class.java).apply {
             flags = Intent.FLAG_ACTIVITY_CLEAR_TOP
         })
     }
