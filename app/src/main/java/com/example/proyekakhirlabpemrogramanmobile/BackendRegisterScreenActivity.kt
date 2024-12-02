@@ -66,24 +66,24 @@ class BackendRegisterScreenActivity : AppCompatActivity() {
 
         auth.createUserWithEmailAndPassword(email, password).addOnCompleteListener(this) { task ->
             if (task.isSuccessful) {
-                Toast.makeText(this, getString(R.string.register_successful), Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, getString(R.string.login), Toast.LENGTH_SHORT).show()
                 val intent = Intent(this, BackendHomeScreenActivity::class.java)
                 intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_NEW_TASK)
                 startActivity(intent)
             } else {
                 when (val exception = task.exception) {
                     is FirebaseAuthUserCollisionException -> {
-                        Toast.makeText(this, getString(R.string.register_error_email_registered), Toast.LENGTH_SHORT).show()
+                        Toast.makeText(this, getString(R.string.login), Toast.LENGTH_SHORT).show()
                     }
                     is FirebaseAuthWeakPasswordException -> {
-                        Toast.makeText(this, getString(R.string.register_error_short_password), Toast.LENGTH_SHORT).show()
+                        Toast.makeText(this, getString(R.string.login), Toast.LENGTH_SHORT).show()
                     }
                     is FirebaseAuthInvalidCredentialsException -> {
-                        Toast.makeText(this, getString(R.string.register_error_invalid_credential), Toast.LENGTH_SHORT).show()
+                        Toast.makeText(this, getString(R.string.login), Toast.LENGTH_SHORT).show()
                     }
                     else -> {
                         Toast.makeText(this,
-                            getString(R.string.register_error_general, exception?.message), Toast.LENGTH_SHORT).show()
+                            getString(R.string.login), Toast.LENGTH_SHORT).show()
                     }
                 }
             }

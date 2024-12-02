@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import com.bumptech.glide.load.engine.DiskCacheStrategy
 
 class GalleryAdapter(private val imageUrls: List<String>) : RecyclerView.Adapter<GalleryAdapter.ImageViewHolder>() {
 
@@ -22,9 +23,9 @@ class GalleryAdapter(private val imageUrls: List<String>) : RecyclerView.Adapter
 
     override fun onBindViewHolder(holder: ImageViewHolder, position: Int) {
         val imageUrl = imageUrls[position]
-        Log.d("noled", imageUrl)
         Glide.with(holder.itemView.context)
             .load(imageUrl)
+//            .diskCacheStrategy(DiskCacheStrategy.NONE)
             .into(holder.imageView)
     }
 

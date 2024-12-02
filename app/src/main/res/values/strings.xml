@@ -1,6 +1,39 @@
 <resources>
 
+    <!-- General -->
     <string name="app_name">My Wardrobe</string>
+    <string name="content_description_icon">Icon</string>
+
+    <!-- Main Screen -->
+    <string name="main_title_1">Welcome to</string>
+    <string name="main_title_2">My Outfit</string>
+    <string name="main_button">Start</string>
+
+    <!-- Login Screen -->
+    <string name="login_title">LOGIN</string>
+    <string name="login_button">Login</string>
+    <string name="login_no_account">Don\'t have an account?</string>
+    <string name="login_to_signup">Signup for free!</string>
+    <string name="login_successful">Login Successful!</string>
+    <string name="login_error_invalid_credential">Invalid email or password!</string>
+    <string name="login_error_general">Error: %s</string>
+
+    <!-- Signup Screen -->
+    <string name="signup_title">SIGNUP</string>
+    <string name="signup_button">Signup</string>
+    <string name="signup_have_account">Already have an account?</string>
+    <string name="signup_to_login">Login now!</string>
+    <string name="signup_successful">Signup Successful!</string>
+    <string name="signup_error_email_used">Email already used!</string>
+    <string name="signup_error_short_password">Password must consist of 6–15 characters</string>
+    <string name="signup_error_invalid_credential">Invalid email or password</string>
+    <string name="signup_error_general">Error: %s</string>
+
+    <!-- Email and Password -->
+    <string name="email_text">Email</string>
+    <string name="password_text">Password</string>
+    <string name="email_empty">Email cannot be empty!</string>
+    <string name="password_empty">Password cannot be empty!</string>
 
     <string name="main_screen">Main Screen</string>
     <string name="login_screen">Login Screen</string>
@@ -10,18 +43,14 @@
     <string name="collection_screen">Collection Screen</string>
 
     <string name="email">Email</string>
-    <string name="email_empty">Email cannot be empty</string>
     <string name="email_user">Email: %s</string>
     <string name="password">Password</string>
-    <string name="password_empty">Password cannot be empty</string>
+
 
     <string name="login">Login</string>
-    <string name="login_successful">Login Successful</string>
-    <string name="login_error_invalid_credential">Invalid email or password</string>
-    <string name="login_error_general">Error: %s</string>
 
     <string name="register">Register</string>
-    <string name="register_successful">Register Successful</string>
+
     <string name="register_error_email_registered">Email already registered</string>
     <string name="register_error_short_password">Password must consist of 6–15 characters</string>
     <string name="register_error_invalid_credential">Invalid email or password</string>
@@ -53,9 +82,11 @@
     <string name="shoes">Shoes</string>
     <string name="random_all">Random All</string>
     <string name="submit">Submit</string>
-    
+
     <string name="schedule_title">Penjadwalan Outfit</string>
     <string name="schedule_head">Buat dan rencanakan outit yang akan kamu gunakan sesuai dengan jadwalmu</string>
     <string name="schedule_date">Sabtu, 7 Januari 2024</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 </resources>

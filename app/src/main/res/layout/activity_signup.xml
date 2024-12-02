@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/screen_background"
+    android:gravity="center"
+    android:orientation="vertical"
+    tools:context=".SignupActivity">
+
+    <!-- Signup Title -->
+    <TextView
+        android:id="@+id/signupTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="75dp"
+        android:fontFamily="@font/hedvig_letters_serif"
+        android:text="@string/signup_title"
+        android:textColor="@color/black"
+        android:textSize="30sp"
+        android:textStyle="bold"/>
+
+    <!-- Email Input -->
+    <EditText
+        android:id="@+id/emailInput"
+        android:layout_width="300dp"
+        android:layout_height="60dp"
+        android:padding="20dp"
+        android:layout_marginBottom="20dp"
+        android:background="@drawable/button_shape"
+        android:maxLines="1"
+        android:hint="@string/email_text"
+        android:autofillHints="emailAddress"
+        android:inputType="textEmailAddress"/>
+
+    <!-- Email Error -->
+    <TextView
+        android:id="@+id/emailError"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="20dp"
+        android:paddingHorizontal="10dp"
+        android:textColor="@color/red"
+        android:textStyle="bold"
+        android:visibility="gone"/>
+
+    <!-- Password Input -->
+    <FrameLayout
+        android:id="@+id/passwordLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="50dp">
+
+        <EditText
+            android:id="@+id/passwordInput"
+            android:layout_width="300dp"
+            android:layout_height="60dp"
+            android:padding="20dp"
+            android:background="@drawable/button_shape"
+            android:maxLines="1"
+            android:hint="@string/password_text"
+            android:autofillHints="password"
+            android:inputType="textPassword"/>
+
+        <ImageView
+            android:id="@+id/passwordToggle"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_marginEnd="20dp"
+            android:src="@drawable/password_hidden_icon"
+            android:contentDescription="@string/content_description_icon"
+            android:layout_gravity="end|center"/>
+
+    </FrameLayout>
+
+    <!-- Password Error -->
+    <TextView
+        android:id="@+id/passwordError"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="25dp"
+        android:paddingHorizontal="10dp"
+        android:textColor="@color/red"
+        android:textStyle="bold"
+        android:visibility="gone"/>
+
+    <!-- Signup Button -->
+    <Button
+        style="@style/Widget.Material3.Button.ElevatedButton"
+        android:id="@+id/signupButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingHorizontal="60dp"
+        android:paddingVertical="10dp"
+        android:layout_marginBottom="50dp"
+        android:backgroundTint="@color/pink"
+        android:text="@string/signup_button"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        android:fontFamily="@font/hedvig_letters_serif"/>
+
+    <!-- Progress Bar -->
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginBottom="50dp"
+        android:visibility="invisible"/>
+
+    <!-- Navigation Text -->
+    <TextView
+        android:id="@+id/navigationText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="5dp"
+        android:text="@string/signup_have_account"
+        android:textSize="18sp"
+        android:textStyle="italic"
+        android:fontFamily="@font/hedvig_letters_serif"/>
+
+    <!-- Sign Up Button -->
+    <Button
+        style="@style/Widget.Material3.Button.ElevatedButton"
+        android:id="@+id/loginButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingHorizontal="50dp"
+        android:paddingVertical="10dp"
+        android:backgroundTint="@color/pink"
+        android:text="@string/signup_to_login"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        android:fontFamily="@font/hedvig_letters_serif"/>
+
+</LinearLayout>
