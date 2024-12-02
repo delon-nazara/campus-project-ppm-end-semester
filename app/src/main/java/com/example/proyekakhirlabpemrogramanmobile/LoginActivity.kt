@@ -62,7 +62,8 @@ class LoginActivity : AppCompatActivity() {
 
     private fun loginUser(email: String, password: String) {
         showLoading()
-        auth.signInWithEmailAndPassword(email, password).addOnCompleteListener(this) { task ->
+        auth.signInWithEmailAndPassword(email, password)
+            .addOnCompleteListener(this) { task ->
             hideLoading()
             if (task.isSuccessful) {
                 showToast(getString(R.string.login_successful))

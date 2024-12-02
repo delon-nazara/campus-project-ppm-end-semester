@@ -6,10 +6,7 @@ import android.text.InputType
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
-import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 import com.example.proyekakhirlabpemrogramanmobile.databinding.ActivitySignupBinding
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseAuthInvalidCredentialsException
@@ -67,7 +64,8 @@ class SignupActivity : AppCompatActivity() {
 
     private fun registerUser(email: String, password: String) {
         showLoading()
-        auth.createUserWithEmailAndPassword(email, password).addOnCompleteListener(this) { task ->
+        auth.createUserWithEmailAndPassword(email, password)
+            .addOnCompleteListener(this) { task ->
             hideLoading()
             if (task.isSuccessful) {
                 showToast(getString(R.string.signup_successful))
