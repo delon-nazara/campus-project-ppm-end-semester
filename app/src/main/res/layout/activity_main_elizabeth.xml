@@ -1,0 +1,299 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background"
+    tools:context=".MainActivity">
+
+
+    <!-- Jam di bagian atas -->
+    <TextView
+        android:id="@+id/textClock"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/time"
+        android:textSize="18sp"
+        android:textColor="@android:color/black"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="16dp" />
+
+    <!-- Judul Koleksi Outfit -->
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/collection_title"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:textColor="@android:color/black"
+        app:layout_constraintTop_toBottomOf="@id/textClock"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="16dp" />
+
+    <!-- Bagian untuk Top -->
+    <TextView
+        android:id="@+id/topLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/top_label"
+        android:textSize="18sp"
+        android:textColor="@android:color/black"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/title"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="24dp" />
+
+    <!-- Horizontal Scroll untuk Top -->
+    <HorizontalScrollView
+        android:id="@+id/topImagesScroll"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/topLabel"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="8dp"/>
+
+    <LinearLayout
+        android:id="@+id/topImages"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toTopOf="@id/topLabel"
+        app:layout_constraintStart_toEndOf="@id/topLabel"
+        android:layout_marginStart="16dp">
+
+        <ImageView
+            android:layout_width="90dp"
+            android:layout_height="80dp"
+            android:layout_marginEnd="8dp" />
+
+        <ImageView
+            android:id="@+id/outfitImage"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_margin="8dp"
+            android:background="@drawable/pictures_folders"/>
+
+
+        <ImageView
+            android:id="@+id/outfitImage2"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_margin="8dp"
+            android:background="@drawable/pictures_folders" />
+
+        <ImageView
+            android:id="@+id/outfitImage1"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_margin="8dp"
+            android:background="@drawable/pictures_folders" />
+
+
+    </LinearLayout>
+
+    <!-- Bagian untuk Bottoms -->
+    <TextView
+        android:id="@+id/bottomLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/bottoms_label"
+        android:textSize="18sp"
+        android:textColor="@android:color/black"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/topImages"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="24dp" />
+
+    <HorizontalScrollView
+        android:id="@+id/bottomImagesScroll"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/bottomLabel"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="8dp"/>
+
+    <LinearLayout
+        android:id="@+id/bottomImages"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toTopOf="@id/bottomLabel"
+        app:layout_constraintStart_toEndOf="@id/bottomLabel"
+        android:layout_marginStart="16dp">
+
+        <ImageView
+            android:layout_width="90dp"
+            android:layout_height="80dp"
+            android:layout_marginEnd="8dp" />
+
+        <ImageView
+            android:id="@+id/outfitImage3"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_margin="8dp"
+            android:background="@drawable/pictures_folders"/>
+
+        <ImageView
+            android:id="@+id/outfitImage4"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_margin="8dp"
+            android:background="@drawable/pictures_folders"/>
+
+
+        <ImageView
+            android:id="@+id/outfitImage5"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_margin="8dp"
+            android:background="@drawable/pictures_folders"/>
+    </LinearLayout>
+
+    <!-- Bagian untuk Accessories -->
+    <TextView
+        android:id="@+id/accessoriesLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/accessories_label"
+        android:textSize="18sp"
+        android:textColor="@android:color/black"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/bottomImages"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="24dp" />
+
+    <HorizontalScrollView
+        android:id="@+id/accessoriesImagesScroll"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/accessoriesLabel"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="8dp"/>
+
+    <LinearLayout
+        android:id="@+id/accessoriesImages"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toTopOf="@id/accessoriesLabel"
+        app:layout_constraintStart_toEndOf="@id/accessoriesLabel"
+        android:layout_marginStart="16dp">
+
+        <ImageView
+            android:layout_width="90dp"
+            android:layout_height="80dp"
+            android:layout_marginEnd="8dp" />
+
+        <ImageView
+            android:id="@+id/outfitImage6"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_margin="8dp"
+            android:background="@drawable/pictures_folders"/>
+
+        <ImageView
+            android:id="@+id/outfitImage7"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_margin="8dp"
+            android:background="@drawable/pictures_folders"/>
+
+        <ImageView
+            android:id="@+id/outfitImage8"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_margin="8dp"
+            android:background="@drawable/pictures_folders"/>
+
+    </LinearLayout>
+
+    <!-- Bagian untuk Shoes -->
+    <TextView
+        android:id="@+id/shoesLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/accessories_label"
+        android:textSize="18sp"
+        android:textColor="@android:color/black"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/accessoriesImages"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="24dp" />
+
+    <HorizontalScrollView
+        android:id="@+id/shoesImagesScroll"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/shoesLabel"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="8dp"/>
+
+    <LinearLayout
+        android:id="@+id/shoesImages"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toTopOf="@id/shoesLabel"
+        app:layout_constraintStart_toEndOf="@id/shoesLabel"
+        android:layout_marginStart="16dp">
+
+        <ImageView
+            android:layout_width="90dp"
+            android:layout_height="80dp"
+            android:layout_marginEnd="8dp" />
+
+        <ImageView
+            android:id="@+id/outfitImage9"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_margin="8dp"
+            android:background="@drawable/pictures_folders"/>
+
+        <ImageView
+            android:id="@+id/outfitImage10"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_margin="8dp"
+            android:background="@drawable/pictures_folders" />
+
+        <ImageView
+            android:id="@+id/outfitImage11"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_margin="8dp"
+            android:background="@drawable/pictures_folders" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerView"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_margin="16dp" />
+
+
+    </LinearLayout>
+
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fabAddOutfit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/camera"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_margin="24dp"
+        android:contentDescription="@string/fab_add_outfit" />
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

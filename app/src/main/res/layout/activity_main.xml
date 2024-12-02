@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:background="@drawable/screen_background"
+    tools:context=".MainActivity">
+
+    <!-- Main Title 1 -->
+    <TextView
+        android:id="@+id/mainTitle1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/main_title_1"
+        android:fontFamily="@font/rochester"
+        android:textSize="55sp"
+        android:textColor="@color/black"/>
+
+    <!-- Main Title 2 -->
+    <TextView
+        android:id="@+id/mainTitle2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/main_title_2"
+        android:fontFamily="@font/rochester"
+        android:textSize="45sp"
+        android:textColor="@color/black"/>
+
+    <!-- Outfit Icon -->
+    <ImageView
+        android:id="@+id/outfitIcon"
+        android:layout_width="250dp"
+        android:layout_height="250dp"
+        android:src="@drawable/outfit_icon"
+        android:contentDescription="@string/content_description_icon"
+        android:layout_marginVertical="50dp"/>
+
+    <!-- Start Button -->
+    <Button
+        style="@style/Widget.Material3.Button.ElevatedButton"
+        android:id="@+id/startButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/pink"
+        android:paddingHorizontal="60dp"
+        android:paddingVertical="10dp"
+        android:text="@string/main_button"
+        android:textSize="24sp"
+        android:textColor="@color/black"
+        android:fontFamily="@font/hedvig_letters_serif"/>
+
+</LinearLayout>
