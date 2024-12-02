@@ -98,4 +98,8 @@
     <string name="accessories_label">Accessories</string>
     <string name="accessories_label">Accessories</string>
 
+    <string name="judul_jadwalkan_outfit">Jadwalkan Outfit</string>
+    <string name="back_button_desc">Back Button</string>
+    <string name="save">Save</string>
+
 </resources>
