@@ -2,10 +2,7 @@ package com.example.proyekakhirlabpemrogramanmobile
 
 import android.content.Intent
 import android.os.Bundle
-import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 import com.example.proyekakhirlabpemrogramanmobile.databinding.ActivityMainBinding
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
@@ -25,7 +22,6 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         binding.startButton.setOnClickListener {
-//            auth.signOut() // todo
             if (auth.currentUser == null) {
                 startLoginActivity()
             } else {
