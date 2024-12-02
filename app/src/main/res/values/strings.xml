@@ -58,4 +58,8 @@
     <string name="schedule_head">Buat dan rencanakan outit yang akan kamu gunakan sesuai dengan jadwalmu</string>
     <string name="schedule_date">Sabtu, 7 Januari 2024</string>
 
+    <string name="judul_jadwalkan_outfit">Jadwalkan Outfit</string>
+    <string name="back_button_desc">Back Button</string>
+    <string name="save">Save</string>
+
 </resources>
