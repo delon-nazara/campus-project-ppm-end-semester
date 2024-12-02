@@ -1,12 +1,15 @@
-package com.example.proyekakhirlabpemrogramanmobile
+package com.example.proyekakhirlabpemrogramanmobile.ui.activity
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import com.cloudinary.android.MediaManager
+import com.example.proyekakhirlabpemrogramanmobile.ui.fragment.CollectionFragment
+import com.example.proyekakhirlabpemrogramanmobile.ui.fragment.OutfitFragment
+import com.example.proyekakhirlabpemrogramanmobile.ui.fragment.ProfileFragment
+import com.example.proyekakhirlabpemrogramanmobile.R
+import com.example.proyekakhirlabpemrogramanmobile.ui.fragment.ScheduleFragment
 import com.example.proyekakhirlabpemrogramanmobile.databinding.ActivityHomeBinding
-import com.example.proyekakhirlabpemrogramanmobile.databinding.ActivityMainBinding
-import com.google.android.material.navigation.NavigationBarView
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
@@ -20,26 +23,30 @@ class HomeActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
+        // Firebase auth initialization
         auth = Firebase.auth
         val user = auth.currentUser
         val userEmail = user?.email
 
+        // Cloudinary initialization
         val dotenv = dotenv {
             directory = "/assets"
             filename = "env"
         }
-
         val config = hashMapOf(
             "cloud_name" to dotenv["CLOUD_NAME"],
             "secure" to true
         )
         MediaManager.init(this, config)
 
+        // Binding setup
         binding = ActivityHomeBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        // Set default fragment
         replaceFragment(CollectionFragment())
 
+        // Change fragment container based on selected menu
         binding.bottomNavigation.setOnItemSelectedListener { item ->
             when (item.itemId) {
                 R.id.collectionMenu -> {
@@ -64,6 +71,7 @@ class HomeActivity : AppCompatActivity() {
 
     }
 
+    // Function for fragment replacement
     private fun replaceFragment(fragment: Fragment) {
         supportFragmentManager
             .beginTransaction()
