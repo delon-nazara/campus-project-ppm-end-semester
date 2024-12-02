@@ -2,7 +2,7 @@ plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
 
-    // Google Services for Firebase
+    // Google services for firebase
     id("com.google.gms.google-services")
 }
 
@@ -44,7 +44,7 @@ android {
 }
 
 dependencies {
-    // Default Library
+    // Default library
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.material)
@@ -54,12 +54,12 @@ dependencies {
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
 
-    // Firebase Library
+    // Firebase library
     implementation(platform(libs.firebase.bom))
     implementation(libs.firebase.firestore)
     implementation(libs.firebase.auth.ktx)
 
-    // CameraX Library
+    // CameraX library
     implementation(libs.androidx.camera.core)
     implementation(libs.androidx.camera.camera2)
     implementation(libs.androidx.camera.lifecycle)
@@ -67,16 +67,16 @@ dependencies {
     implementation(libs.androidx.camera.extensions)
     implementation(libs.guava)
 
-    // Cloudinary Library
+    // Cloudinary library
     implementation(libs.cloudinary.android)
 
-    // Dotenv Kotlin Library
+    // Dotenv kotlin library
     implementation(libs.dotenv.kotlin)
 
-    // Image Cropper Library
+    // Image cropper library
     implementation(libs.android.image.cropper)
 
-    // Glide Library
+    // Glide library
     implementation(libs.glide)
     annotationProcessor(libs.compiler)
 }

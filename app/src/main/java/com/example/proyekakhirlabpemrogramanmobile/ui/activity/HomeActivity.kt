@@ -23,26 +23,30 @@ class HomeActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
+        // Firebase auth initialization
         auth = Firebase.auth
         val user = auth.currentUser
         val userEmail = user?.email
 
+        // Cloudinary initialization
         val dotenv = dotenv {
             directory = "/assets"
             filename = "env"
         }
-
         val config = hashMapOf(
             "cloud_name" to dotenv["CLOUD_NAME"],
             "secure" to true
         )
         MediaManager.init(this, config)
 
+        // Binding setup
         binding = ActivityHomeBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        // Set default fragment
         replaceFragment(CollectionFragment())
 
+        // Change fragment container based on selected menu
         binding.bottomNavigation.setOnItemSelectedListener { item ->
             when (item.itemId) {
                 R.id.collectionMenu -> {
@@ -67,6 +71,7 @@ class HomeActivity : AppCompatActivity() {
 
     }
 
+    // Function for fragment replacement
     private fun replaceFragment(fragment: Fragment) {
         supportFragmentManager
             .beginTransaction()

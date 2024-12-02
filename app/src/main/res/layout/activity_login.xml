@@ -10,7 +10,7 @@
     android:orientation="vertical"
     tools:context=".ui.activity.LoginActivity">
 
-    <!-- Login Title -->
+    <!-- Login title -->
     <TextView
         android:id="@+id/loginTitle"
         android:layout_width="wrap_content"
@@ -22,7 +22,7 @@
         android:textSize="30sp"
         android:textStyle="bold"/>
 
-    <!-- Email Input -->
+    <!-- Email input -->
     <EditText
         android:id="@+id/emailInput"
         android:layout_width="300dp"
@@ -31,11 +31,11 @@
         android:layout_marginBottom="20dp"
         android:background="@drawable/button_shape"
         android:maxLines="1"
-        android:hint="@string/email_text"
+        android:hint="@string/email"
         android:autofillHints="emailAddress"
         android:inputType="textEmailAddress"/>
 
-    <!-- Email Error -->
+    <!-- Email error -->
     <TextView
         android:id="@+id/emailError"
         android:layout_width="300dp"
@@ -47,7 +47,7 @@
         android:textStyle="bold"
         android:visibility="gone"/>
 
-    <!-- Password Input -->
+    <!-- Password input -->
     <FrameLayout
         android:id="@+id/passwordLayout"
         android:layout_width="wrap_content"
@@ -61,7 +61,7 @@
             android:padding="20dp"
             android:background="@drawable/button_shape"
             android:maxLines="1"
-            android:hint="@string/password_text"
+            android:hint="@string/password"
             android:autofillHints="password"
             android:inputType="textPassword"/>
 
@@ -71,12 +71,12 @@
             android:layout_height="24dp"
             android:layout_marginEnd="20dp"
             android:src="@drawable/password_hidden_icon"
-            android:contentDescription="@string/content_description_icon"
+            android:contentDescription="@string/content_description"
             android:layout_gravity="end|center"/>
 
     </FrameLayout>
 
-    <!-- Password Error -->
+    <!-- Password error -->
     <TextView
         android:id="@+id/passwordError"
         android:layout_width="300dp"
@@ -88,7 +88,7 @@
         android:textStyle="bold"
         android:visibility="gone"/>
 
-    <!-- Login Button -->
+    <!-- Login button -->
     <Button
         style="@style/Widget.Material3.Button.ElevatedButton"
         android:id="@+id/loginButton"
@@ -103,7 +103,7 @@
         android:textSize="20sp"
         android:fontFamily="@font/hedvig_letters_serif"/>
 
-    <!-- Progress Bar -->
+    <!-- Progress bar -->
     <ProgressBar
         android:id="@+id/progressBar"
         android:layout_width="50dp"
@@ -111,7 +111,7 @@
         android:layout_marginBottom="50dp"
         android:visibility="invisible"/>
 
-    <!-- Navigation Text -->
+    <!-- Navigation text -->
     <TextView
         android:id="@+id/navigationText"
         android:layout_width="wrap_content"
@@ -122,7 +122,7 @@
         android:textStyle="italic"
         android:fontFamily="@font/hedvig_letters_serif"/>
 
-    <!-- Sign Up Button -->
+    <!-- Signup button -->
     <Button
         style="@style/Widget.Material3.Button.ElevatedButton"
         android:id="@+id/signupButton"

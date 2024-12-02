@@ -1,15 +1,14 @@
 <resources>
-
     <!-- General -->
     <string name="app_name">My Wardrobe</string>
-    <string name="content_description_icon">Icon</string>
+    <string name="content_description">Image/Icon</string>
 
-    <!-- Main Screen -->
+    <!-- Main screen -->
     <string name="main_title_1">Welcome to</string>
     <string name="main_title_2">My Outfit</string>
     <string name="main_button">Start</string>
 
-    <!-- Login Screen -->
+    <!-- Login screen -->
     <string name="login_title">LOGIN</string>
     <string name="login_button">Login</string>
     <string name="login_no_account">Don\'t have an account?</string>
@@ -18,7 +17,7 @@
     <string name="login_error_invalid_credential">Invalid email or password!</string>
     <string name="login_error_general">Error: %s</string>
 
-    <!-- Signup Screen -->
+    <!-- Signup screen -->
     <string name="signup_title">SIGNUP</string>
     <string name="signup_button">Signup</string>
     <string name="signup_have_account">Already have an account?</string>
@@ -29,71 +28,78 @@
     <string name="signup_error_invalid_credential">Invalid email or password</string>
     <string name="signup_error_general">Error: %s</string>
 
-    <!-- Email and Password -->
-    <string name="email_text">Email</string>
-    <string name="password_text">Password</string>
+    <!-- Email and password -->
+    <string name="email">Email</string>
+    <string name="password">Password</string>
     <string name="email_empty">Email cannot be empty!</string>
     <string name="password_empty">Password cannot be empty!</string>
 
-    <string name="main_screen">Main Screen</string>
-    <string name="login_screen">Login Screen</string>
-    <string name="register_screen">Register Screen</string>
-    <string name="home_screen">Home Screen</string>
-    <string name="camera_screen">Camera Screen</string>
-    <string name="collection_screen">Collection Screen</string>
+    <!-- Navigation bar -->
+    <string name="collection">Collection</string>
+    <string name="outfit">Outfit</string>
+    <string name="schedule">Schedule</string>
+    <string name="profile">Profile</string>
 
-    <string name="email">Email</string>
-    <string name="email_user">Email: %s</string>
-    <string name="password">Password</string>
-
-
-    <string name="login">Login</string>
-
-    <string name="register">Register</string>
-
-    <string name="register_error_email_registered">Email already registered</string>
-    <string name="register_error_short_password">Password must consist of 6–15 characters</string>
-    <string name="register_error_invalid_credential">Invalid email or password</string>
-    <string name="register_error_general">Error: %s</string>
-
-    <string name="logout">Logout</string>
-    <string name="logout_successful">Logout Successful</string>
-
-    <string name="camera_failed_to_start">Failed to start camera: %s</string>
-    <string name="camera_permission_required">Camera Permission Required</string>
-    <string name="camera_permission_explained">This app requires camera permission to take pictures. Please grant permission from settings.</string>
-
-    <string name="add_collection">Add Collection</string>
-
-    <string name="close">Close</string>
-    <string name="capture">Capture</string>
-
-    <string-array name="collection_types">
-        <item>Shirt</item>
-        <item>Pants</item>
-        <item>Shoes</item>
-        <item>Accessories</item>
-    </string-array>
-
-    <string name="judul_rekomendasi">REKOMENDASI\nOUTFIT</string>
-    <string name="top">Top</string>
-    <string name="bottoms">Bottoms</string>
-    <string name="accessories">Accessories</string>
-    <string name="shoes">Shoes</string>
-    <string name="random_all">Random All</string>
-    <string name="submit">Submit</string>
-
-    <string name="schedule_title">Penjadwalan Outfit</string>
-    <string name="schedule_head">Buat dan rencanakan outit yang akan kamu gunakan sesuai dengan jadwalmu</string>
-    <string name="schedule_date">Sabtu, 7 Januari 2024</string>
-    <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="take_picture">Take Picture</string>
 
-    <string name="fab_add_outfit">Tambah pakaian</string>
-    <string name="time">9:30</string>
-    <string name="collection_title">Koleksi Outfit</string>
-    <string name="top_label">Top</string>
-    <string name="bottoms_label">Bottoms</string>
-    <string name="accessories_label">Accessories</string>
+<!--    <string name="main_screen">Main Screen</string>-->
+<!--    <string name="login_screen">Login Screen</string>-->
+<!--    <string name="register_screen">Register Screen</string>-->
+<!--    <string name="home_screen">Home Screen</string>-->
+<!--    <string name="camera_screen">Camera Screen</string>-->
+<!--    <string name="collection_screen">Collection Screen</string>-->
+
+<!--    <string name="email">Email</string>-->
+<!--    <string name="email_user">Email: %s</string>-->
+<!--    <string name="password">Password</string>-->
+
+
+<!--    <string name="login">Login</string>-->
+
+<!--    <string name="register">Register</string>-->
+
+<!--    <string name="register_error_email_registered">Email already registered</string>-->
+<!--    <string name="register_error_short_password">Password must consist of 6–15 characters</string>-->
+<!--    <string name="register_error_invalid_credential">Invalid email or password</string>-->
+<!--    <string name="register_error_general">Error: %s</string>-->
+
+<!--    <string name="logout">Logout</string>-->
+<!--    <string name="logout_successful">Logout Successful</string>-->
+
+<!--    <string name="camera_failed_to_start">Failed to start camera: %s</string>-->
+<!--    <string name="camera_permission_required">Camera Permission Required</string>-->
+<!--    <string name="camera_permission_explained">This app requires camera permission to take pictures. Please grant permission from settings.</string>-->
+
+<!--    <string name="add_collection">Add Collection</string>-->
+
+<!--    <string name="close">Close</string>-->
+<!--    <string name="capture">Capture</string>-->
+
+<!--    <string-array name="collection_types">-->
+<!--        <item>Shirt</item>-->
+<!--        <item>Pants</item>-->
+<!--        <item>Shoes</item>-->
+<!--        <item>Accessories</item>-->
+<!--    </string-array>-->
+
+<!--    <string name="judul_rekomendasi">REKOMENDASI\nOUTFIT</string>-->
+<!--    <string name="top">Top</string>-->
+<!--    <string name="bottoms">Bottoms</string>-->
+<!--    <string name="accessories">Accessories</string>-->
+<!--    <string name="shoes">Shoes</string>-->
+<!--    <string name="random_all">Random All</string>-->
+<!--    <string name="submit">Submit</string>-->
+
+<!--    <string name="schedule_title">Penjadwalan Outfit</string>-->
+<!--    <string name="schedule_head">Buat dan rencanakan outit yang akan kamu gunakan sesuai dengan jadwalmu</string>-->
+<!--    <string name="schedule_date">Sabtu, 7 Januari 2024</string>-->
+
+<!--    <string name="fab_add_outfit">Tambah pakaian</string>-->
+<!--    <string name="time">9:30</string>-->
+<!--    <string name="collection_title">Koleksi Outfit</string>-->
+<!--    <string name="top_label">Top</string>-->
+<!--    <string name="bottoms_label">Bottoms</string>-->
+<!--    <string name="accessories_label">Accessories</string>-->
 
 </resources>
