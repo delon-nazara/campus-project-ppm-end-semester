@@ -40,13 +40,20 @@
     <string name="schedule">Schedule</string>
     <string name="profile">Profile</string>
 
-    <string name="collection_title">Outfit Collection</string>
+    <!-- Collection Screen -->
+    <string name="collection_title">Manage Collection</string>
     <string name="collection_add">Add Collection</string>
-
     <string name="top">Top</string>
     <string name="bottom">Bottom</string>
     <string name="accessories">Accessories</string>
     <string name="shoes">Shoes</string>
+
+    <!-- Outfit Screen -->
+    <string name="outfit_title">List Outfit</string>
+    <string name="schedule_title">Your Schedule</string>
+    <string name="profile_title">Profile Setting</string>
+
+    <string name="logout">Logout</string>
 
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="take_picture">Take Picture</string>

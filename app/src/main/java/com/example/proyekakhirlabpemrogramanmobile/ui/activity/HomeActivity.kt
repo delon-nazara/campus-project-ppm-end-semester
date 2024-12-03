@@ -42,7 +42,7 @@ class HomeActivity : AppCompatActivity() {
         }
 
         // Set default fragment
-        replaceFragment(CollectionFragment())
+        replaceFragment(ScheduleFragment())
 
         // Change fragment container based on selected menu
         binding.bottomNavigation.setOnItemSelectedListener { item ->
