@@ -2,6 +2,8 @@ package com.example.proyekakhirlabpemrogramanmobile.ui.activity
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.view.ViewCompat
+import androidx.core.view.WindowInsetsCompat
 import androidx.fragment.app.Fragment
 import com.cloudinary.android.MediaManager
 import com.example.proyekakhirlabpemrogramanmobile.ui.fragment.CollectionFragment
@@ -28,20 +30,16 @@ class HomeActivity : AppCompatActivity() {
         val user = auth.currentUser
         val userEmail = user?.email
 
-        // Cloudinary initialization
-        val dotenv = dotenv {
-            directory = "/assets"
-            filename = "env"
-        }
-        val config = hashMapOf(
-            "cloud_name" to dotenv["CLOUD_NAME"],
-            "secure" to true
-        )
-        MediaManager.init(this, config)
-
         // Binding setup
         binding = ActivityHomeBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        // Add padding from status bar
+        ViewCompat.setOnApplyWindowInsetsListener(binding.root) { v, insets ->
+            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
+            v.setPadding(systemBars.left, systemBars.top, systemBars.right, v.paddingBottom)
+            insets
+        }
 
         // Set default fragment
         replaceFragment(CollectionFragment())

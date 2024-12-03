@@ -25,6 +25,7 @@
         android:layout_height="wrap_content"
         android:background="@color/pink"
         android:paddingTop="5dp"
+        app:itemActiveIndicatorStyle="@color/pink"
         app:menu="@menu/bottom_navigation_menu"
         app:itemIconTint="@color/black"
         app:itemTextColor="@color/black"

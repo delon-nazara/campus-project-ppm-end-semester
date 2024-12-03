@@ -3,6 +3,7 @@
     <item
         android:id="@+id/collectionMenu"
         android:icon="@drawable/collection_icon"
+        android:color="@color/red"
         android:title="@string/collection"/>
     <item
         android:id="@+id/outfitMenu"

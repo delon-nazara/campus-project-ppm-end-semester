@@ -1,7 +1,7 @@
 <resources>
     <!-- General -->
     <string name="app_name">My Wardrobe</string>
-    <string name="content_description">Image/Icon</string>
+    <string name="content_description">Image or Icon</string>
 
     <!-- Main screen -->
     <string name="main_title_1">Welcome to</string>
@@ -39,6 +39,14 @@
     <string name="outfit">Outfit</string>
     <string name="schedule">Schedule</string>
     <string name="profile">Profile</string>
+
+    <string name="collection_title">Outfit Collection</string>
+    <string name="collection_add">Add Collection</string>
+
+    <string name="top">Top</string>
+    <string name="bottom">Bottom</string>
+    <string name="accessories">Accessories</string>
+    <string name="shoes">Shoes</string>
 
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="take_picture">Take Picture</string>
