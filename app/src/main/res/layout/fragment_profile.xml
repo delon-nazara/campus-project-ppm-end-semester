@@ -66,7 +66,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="30dp"
-        android:backgroundTint="@color/pink"
+        android:backgroundTint="@color/light_pink"
         android:fontFamily="@font/hedvig_letters_serif"
         android:paddingHorizontal="60dp"
         android:paddingVertical="10dp"

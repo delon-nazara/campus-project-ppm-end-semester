@@ -5,9 +5,11 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import com.example.proyekakhirlabpemrogramanmobile.R
 
-class CollectionAdapter(private val images: List<Int>) : RecyclerView.Adapter<CollectionAdapter.CollectionViewHolder>() {
+class CollectionAdapter(private val imageUrls: List<String>) : RecyclerView.Adapter<CollectionAdapter.CollectionViewHolder>() {
+
     inner class CollectionViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val imageView: ImageView = itemView.findViewById(R.id.imageView)
     }
@@ -18,10 +20,15 @@ class CollectionAdapter(private val images: List<Int>) : RecyclerView.Adapter<Co
     }
 
     override fun onBindViewHolder(holder: CollectionViewHolder, position: Int) {
-        holder.imageView.setImageResource(images[position])
+        val imageUrl = imageUrls[position]
+        Glide.with(holder.itemView.context)
+            .load(imageUrl)
+            .placeholder(R.drawable.image_placeholder)
+            .error(R.drawable.image_placeholder)
+            .into(holder.imageView)
     }
 
     override fun getItemCount(): Int {
-        return images.size
+        return imageUrls.size
     }
 }

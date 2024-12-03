@@ -43,82 +43,89 @@
     <!-- Collection Screen -->
     <string name="collection_title">Manage Collection</string>
     <string name="collection_add">Add Collection</string>
-    <string name="top">Top</string>
-    <string name="bottom">Bottom</string>
-    <string name="accessories">Accessories</string>
-    <string name="shoes">Shoes</string>
+    <string name="collection_empty">Empty</string>
+    <string name="top">Top\nCollection</string>
+    <string name="bottom">Bottom\nCollection</string>
+    <string name="shoes">Shoes\nCollection</string>
+    <string name="accessories">Accessories\nCollection</string>
 
-    <!-- Outfit Screen -->
+    <!-- Another Screen -->
     <string name="outfit_title">List Outfit</string>
     <string name="schedule_title">Your Schedule</string>
     <string name="profile_title">Profile Setting</string>
-
     <string name="logout">Logout</string>
 
-    <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="take_picture">Take Picture</string>
+    <!-- Camera Screen -->
+    <string name="camera_failed_to_start">Failed to start camera</string>
+    <string name="camera_failed_to_capture">Failed to capture image</string>
+    <string name="camera_permission_required">Camera Permission Required</string>
+    <string name="camera_permission_explained">This app requires camera permission to take pictures. Please grant permission from settings.</string>
 
-<!--    <string name="main_screen">Main Screen</string>-->
-<!--    <string name="login_screen">Login Screen</string>-->
-<!--    <string name="register_screen">Register Screen</string>-->
-<!--    <string name="home_screen">Home Screen</string>-->
-<!--    <string name="camera_screen">Camera Screen</string>-->
-<!--    <string name="collection_screen">Collection Screen</string>-->
+    <!-- Camera Edit Screen -->
+    <string name="cancel">Cancel</string>
+    <string name="save">Save</string>
+    <string name="image_name">Enter image name</string>
+    <string name="image_name_empty">Image name cannot be empty</string>
+    <string name="upload_image">Uploading image…</string>
+    <string name="upload_image_successful">Upload image successful</string>
+    <string name="upload_image_error">Upload image error</string>
+    <string-array name="collection_types">
+        <item>Top</item>
+        <item>Bottom</item>
+        <item>Shoes</item>
+        <item>Accessories</item>
+    </string-array>
 
-<!--    <string name="email">Email</string>-->
-<!--    <string name="email_user">Email: %s</string>-->
-<!--    <string name="password">Password</string>-->
+    <!--    <string name="main_screen">Main Screen</string>-->
+    <!--    <string name="login_screen">Login Screen</string>-->
+    <!--    <string name="register_screen">Register Screen</string>-->
+    <!--    <string name="home_screen">Home Screen</string>-->
+    <!--    <string name="camera_screen">Camera Screen</string>-->
+    <!--    <string name="collection_screen">Collection Screen</string>-->
+
+    <!--    <string name="email">Email</string>-->
+    <!--    <string name="email_user">Email: %s</string>-->
+    <!--    <string name="password">Password</string>-->
 
 
-<!--    <string name="login">Login</string>-->
+    <!--    <string name="login">Login</string>-->
 
-<!--    <string name="register">Register</string>-->
+    <!--    <string name="register">Register</string>-->
 
-<!--    <string name="register_error_email_registered">Email already registered</string>-->
-<!--    <string name="register_error_short_password">Password must consist of 6–15 characters</string>-->
-<!--    <string name="register_error_invalid_credential">Invalid email or password</string>-->
-<!--    <string name="register_error_general">Error: %s</string>-->
+    <!--    <string name="register_error_email_registered">Email already registered</string>-->
+    <!--    <string name="register_error_short_password">Password must consist of 6–15 characters</string>-->
+    <!--    <string name="register_error_invalid_credential">Invalid email or password</string>-->
+    <!--    <string name="register_error_general">Error: %s</string>-->
 
-<!--    <string name="logout">Logout</string>-->
-<!--    <string name="logout_successful">Logout Successful</string>-->
+    <!--    <string name="logout">Logout</string>-->
+    <!--    <string name="logout_successful">Logout Successful</string>-->
 
-<!--    <string name="camera_failed_to_start">Failed to start camera: %s</string>-->
-<!--    <string name="camera_permission_required">Camera Permission Required</string>-->
-<!--    <string name="camera_permission_explained">This app requires camera permission to take pictures. Please grant permission from settings.</string>-->
 
-<!--    <string name="add_collection">Add Collection</string>-->
+    <!--    <string name="add_collection">Add Collection</string>-->
 
-<!--    <string name="close">Close</string>-->
-<!--    <string name="capture">Capture</string>-->
+    <!--    <string name="close">Close</string>-->
 
-<!--    <string-array name="collection_types">-->
-<!--        <item>Shirt</item>-->
-<!--        <item>Pants</item>-->
-<!--        <item>Shoes</item>-->
-<!--        <item>Accessories</item>-->
-<!--    </string-array>-->
+    <!--    <string name="judul_rekomendasi">REKOMENDASI\nOUTFIT</string>-->
+    <!--    <string name="top">Top</string>-->
+    <!--    <string name="bottoms">Bottoms</string>-->
+    <!--    <string name="accessories">Accessories</string>-->
+    <!--    <string name="shoes">Shoes</string>-->
+    <!--    <string name="random_all">Random All</string>-->
+    <!--    <string name="submit">Submit</string>-->
 
-<!--    <string name="judul_rekomendasi">REKOMENDASI\nOUTFIT</string>-->
-<!--    <string name="top">Top</string>-->
-<!--    <string name="bottoms">Bottoms</string>-->
-<!--    <string name="accessories">Accessories</string>-->
-<!--    <string name="shoes">Shoes</string>-->
-<!--    <string name="random_all">Random All</string>-->
-<!--    <string name="submit">Submit</string>-->
+    <!--    <string name="schedule_title">Penjadwalan Outfit</string>-->
+    <!--    <string name="schedule_head">Buat dan rencanakan outit yang akan kamu gunakan sesuai dengan jadwalmu</string>-->
+    <!--    <string name="schedule_date">Sabtu, 7 Januari 2024</string>-->
 
-<!--    <string name="schedule_title">Penjadwalan Outfit</string>-->
-<!--    <string name="schedule_head">Buat dan rencanakan outit yang akan kamu gunakan sesuai dengan jadwalmu</string>-->
-<!--    <string name="schedule_date">Sabtu, 7 Januari 2024</string>-->
+    <!--    <string name="fab_add_outfit">Tambah pakaian</string>-->
+    <!--    <string name="time">9:30</string>-->
+    <!--    <string name="collection_title">Koleksi Outfit</string>-->
+    <!--    <string name="top_label">Top</string>-->
+    <!--    <string name="bottoms_label">Bottoms</string>-->
+    <!--    <string name="accessories_label">Accessories</string>-->
 
-<!--    <string name="fab_add_outfit">Tambah pakaian</string>-->
-<!--    <string name="time">9:30</string>-->
-<!--    <string name="collection_title">Koleksi Outfit</string>-->
-<!--    <string name="top_label">Top</string>-->
-<!--    <string name="bottoms_label">Bottoms</string>-->
-<!--    <string name="accessories_label">Accessories</string>-->
-
-<!--    <string name="judul_jadwalkan_outfit">Jadwalkan Outfit</string>-->
-<!--    <string name="back_button_desc">Back Button</string>-->
-<!--    <string name="save">Save</string>-->
+    <!--    <string name="judul_jadwalkan_outfit">Jadwalkan Outfit</string>-->
+    <!--    <string name="back_button_desc">Back Button</string>-->
+    <!--    <string name="save">Save</string>-->
 
 </resources>

@@ -1,14 +1,18 @@
 package com.example.proyekakhirlabpemrogramanmobile.ui.fragment
 
+import android.content.Intent
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.proyekakhirlabpemrogramanmobile.R
 import com.example.proyekakhirlabpemrogramanmobile.adapter.CollectionAdapter
 import com.example.proyekakhirlabpemrogramanmobile.databinding.FragmentCollectionBinding
+import com.example.proyekakhirlabpemrogramanmobile.ui.activity.CameraActivity
+import com.google.firebase.auth.ktx.auth
+import com.google.firebase.firestore.ktx.firestore
+import com.google.firebase.ktx.Firebase
 
 class CollectionFragment : Fragment() {
     private var _binding: FragmentCollectionBinding? = null
@@ -21,43 +25,90 @@ class CollectionFragment : Fragment() {
         _binding = FragmentCollectionBinding.inflate(inflater, container, false)
         val view = binding.root
 
-        val images = listOf(
-            R.drawable.top_1,
-            R.drawable.top_2,
-            R.drawable.top_3,
-            R.drawable.top_4
-        )
-        binding.recyclerViewTop.adapter = CollectionAdapter(images)
-        binding.recyclerViewTop.layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
+        binding.addCollection.setOnClickListener {
+            startCameraActivity()
+        }
 
-        val images2 = listOf(
-            R.drawable.bottom_1,
-            R.drawable.bottom_2,
-            R.drawable.bottom_3,
-            R.drawable.bottom_4
-        )
-        binding.recyclerViewBottom.adapter = CollectionAdapter(images2)
-        binding.recyclerViewBottom.layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
+        val topUrl = mutableListOf<String>()
+        val bottomUrl = mutableListOf<String>()
+        val shoesUrl = mutableListOf<String>()
+        val accessoriesUrl = mutableListOf<String>()
 
-        val images3 = listOf(
-            R.drawable.accessories_1,
-            R.drawable.accessories_2,
-            R.drawable.accessories_3,
-            R.drawable.accessories_4
-        )
-        binding.recyclerViewAccessories.adapter = CollectionAdapter(images3)
-        binding.recyclerViewAccessories.layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
+        val userEmail = Firebase.auth.currentUser?.email ?: "unknown_user"
+        val db = Firebase.firestore
+        val dbRef = db.collection("collection").document(userEmail)
 
-        val images4 = listOf(
-            R.drawable.shoes_1,
-            R.drawable.shoes_2,
-            R.drawable.shoes_3,
-            R.drawable.shoes_4
-        )
-        binding.recyclerViewShoes.adapter = CollectionAdapter(images4)
-        binding.recyclerViewShoes.layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
+        dbRef.collection("top").get()
+            .addOnSuccessListener { documents ->
+                if (documents.documents.isEmpty()) {
+                    binding.topEmptyPlaceholder.visibility = View.VISIBLE
+                } else {
+                    binding.topEmptyPlaceholder.visibility = View.GONE
+                }
+
+                documents.forEach {
+                    topUrl.add(it.data["url"].toString())
+                }
+
+                binding.recyclerViewTop.adapter = CollectionAdapter(topUrl)
+                binding.recyclerViewTop.layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
+            }
+
+        dbRef.collection("bottom").get()
+            .addOnSuccessListener { documents ->
+                if (documents.documents.isEmpty()) {
+                    binding.bottomEmptyPlaceholder.visibility = View.VISIBLE
+                } else {
+                    binding.bottomEmptyPlaceholder.visibility = View.GONE
+                }
+
+                documents.forEach {
+                    bottomUrl.add(it.data["url"].toString())
+                }
+
+                binding.recyclerViewBottom.adapter = CollectionAdapter(bottomUrl)
+                binding.recyclerViewBottom.layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
+            }
+
+        dbRef.collection("shoes").get()
+            .addOnSuccessListener { documents ->
+                if (documents.documents.isEmpty()) {
+                    binding.shoesEmptyPlaceholder.visibility = View.VISIBLE
+                } else {
+                    binding.shoesEmptyPlaceholder.visibility = View.GONE
+                }
+
+                documents.forEach {
+                    shoesUrl.add(it.data["url"].toString())
+                }
+
+                binding.recyclerViewShoes.adapter = CollectionAdapter(shoesUrl)
+                binding.recyclerViewShoes.layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
+            }
+
+        dbRef.collection("accessories").get()
+            .addOnSuccessListener { documents ->
+                if (documents.documents.isEmpty()) {
+                    binding.accessoriesEmptyPlaceholder.visibility = View.VISIBLE
+                } else {
+                    binding.accessoriesEmptyPlaceholder.visibility = View.GONE
+                }
+
+                documents.forEach {
+                    accessoriesUrl.add(it.data["url"].toString())
+                }
+
+                binding.recyclerViewAccessories.adapter = CollectionAdapter(accessoriesUrl)
+                binding.recyclerViewAccessories.layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
+            }
 
         return view
+    }
+
+    private fun startCameraActivity() {
+        startActivity(Intent(requireContext(), CameraActivity::class.java).apply {
+            flags = Intent.FLAG_ACTIVITY_CLEAR_TOP
+        })
     }
 
     override fun onDestroyView() {

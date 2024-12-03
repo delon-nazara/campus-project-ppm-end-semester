@@ -42,7 +42,28 @@ class HomeActivity : AppCompatActivity() {
         }
 
         // Set default fragment
-        replaceFragment(ScheduleFragment())
+        val defaultFragment = intent.getStringExtra("defaultFragment")
+        when (defaultFragment) {
+            "OutfitFragment" -> {
+                replaceFragment(OutfitFragment())
+                binding.bottomNavigation.selectedItemId = R.id.outfitMenu
+            }
+
+            "ScheduleFragment" -> {
+                replaceFragment(ScheduleFragment())
+                binding.bottomNavigation.selectedItemId = R.id.scheduleMenu
+            }
+
+            "ProfileFragment" -> {
+                replaceFragment(ProfileFragment())
+                binding.bottomNavigation.selectedItemId = R.id.profileMenu
+            }
+
+            else -> {
+                replaceFragment(CollectionFragment())
+                binding.bottomNavigation.selectedItemId = R.id.collectionMenu
+            }
+        }
 
         // Change fragment container based on selected menu
         binding.bottomNavigation.setOnItemSelectedListener { item ->
@@ -51,18 +72,22 @@ class HomeActivity : AppCompatActivity() {
                     replaceFragment(CollectionFragment())
                     true
                 }
+
                 R.id.outfitMenu -> {
                     replaceFragment(OutfitFragment())
                     true
                 }
+
                 R.id.scheduleMenu -> {
                     replaceFragment(ScheduleFragment())
                     true
                 }
+
                 R.id.profileMenu -> {
                     replaceFragment(ProfileFragment())
                     true
                 }
+
                 else -> false
             }
         }

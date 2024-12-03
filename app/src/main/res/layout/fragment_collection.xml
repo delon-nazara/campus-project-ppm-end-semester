@@ -32,9 +32,10 @@
             app:layout_constraintTop_toBottomOf="@id/screenTitle">
 
             <androidx.cardview.widget.CardView
-                android:layout_width="125dp"
+                android:layout_width="150dp"
                 android:layout_height="125dp"
                 android:layout_gravity="center"
+                android:layout_marginVertical="5dp"
                 android:layout_marginEnd="20dp"
                 app:cardBackgroundColor="@color/white"
                 app:cardCornerRadius="16dp"
@@ -45,8 +46,43 @@
                     android:layout_height="match_parent"
                     android:gravity="center"
                     android:text="@string/top"
-                    android:textSize="20sp"
+                    android:textSize="18sp"
                     android:textStyle="bold" />
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/topEmptyPlaceholder"
+                android:visibility="gone"
+                android:layout_width="125dp"
+                android:layout_height="125dp"
+                android:layout_marginVertical="5dp"
+                app:cardBackgroundColor="@color/white"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="4dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:paddingVertical="16dp">
+
+                    <ImageView
+                        android:layout_width="75dp"
+                        android:layout_height="75dp"
+                        android:src="@drawable/image_placeholder"
+                        android:contentDescription="@string/content_description"/>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:text="@string/collection_empty"
+                        android:textSize="14sp"
+                        android:textStyle="bold" />
+
+                </LinearLayout>
+
             </androidx.cardview.widget.CardView>
 
             <androidx.recyclerview.widget.RecyclerView
@@ -66,9 +102,10 @@
             app:layout_constraintTop_toBottomOf="@id/layoutTop">
 
             <androidx.cardview.widget.CardView
-                android:layout_width="125dp"
+                android:layout_width="150dp"
                 android:layout_height="125dp"
                 android:layout_gravity="center"
+                android:layout_marginVertical="5dp"
                 android:layout_marginEnd="20dp"
                 app:cardBackgroundColor="@color/white"
                 app:cardCornerRadius="16dp"
@@ -79,8 +116,43 @@
                     android:layout_height="match_parent"
                     android:gravity="center"
                     android:text="@string/bottom"
-                    android:textSize="20sp"
+                    android:textSize="18sp"
                     android:textStyle="bold" />
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/bottomEmptyPlaceholder"
+                android:visibility="gone"
+                android:layout_width="125dp"
+                android:layout_height="125dp"
+                android:layout_marginVertical="5dp"
+                app:cardBackgroundColor="@color/white"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="4dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:paddingVertical="16dp">
+
+                    <ImageView
+                        android:layout_width="75dp"
+                        android:layout_height="75dp"
+                        android:src="@drawable/image_placeholder"
+                        android:contentDescription="@string/content_description"/>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:text="@string/collection_empty"
+                        android:textSize="14sp"
+                        android:textStyle="bold" />
+
+                </LinearLayout>
+
             </androidx.cardview.widget.CardView>
 
             <androidx.recyclerview.widget.RecyclerView
@@ -100,9 +172,10 @@
             app:layout_constraintTop_toBottomOf="@id/layoutBottom">
 
             <androidx.cardview.widget.CardView
-                android:layout_width="125dp"
+                android:layout_width="150dp"
                 android:layout_height="125dp"
                 android:layout_gravity="center"
+                android:layout_marginVertical="5dp"
                 android:layout_marginEnd="20dp"
                 app:cardBackgroundColor="@color/white"
                 app:cardCornerRadius="16dp"
@@ -113,8 +186,43 @@
                     android:layout_height="match_parent"
                     android:gravity="center"
                     android:text="@string/shoes"
-                    android:textSize="20sp"
+                    android:textSize="18sp"
                     android:textStyle="bold" />
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/shoesEmptyPlaceholder"
+                android:visibility="gone"
+                android:layout_width="125dp"
+                android:layout_height="125dp"
+                android:layout_marginVertical="5dp"
+                app:cardBackgroundColor="@color/white"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="4dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:paddingVertical="16dp">
+
+                    <ImageView
+                        android:layout_width="75dp"
+                        android:layout_height="75dp"
+                        android:src="@drawable/image_placeholder"
+                        android:contentDescription="@string/content_description"/>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:text="@string/collection_empty"
+                        android:textSize="14sp"
+                        android:textStyle="bold" />
+
+                </LinearLayout>
+
             </androidx.cardview.widget.CardView>
 
             <androidx.recyclerview.widget.RecyclerView
@@ -134,9 +242,10 @@
             app:layout_constraintTop_toBottomOf="@id/layoutShoes">
 
             <androidx.cardview.widget.CardView
-                android:layout_width="125dp"
+                android:layout_width="150dp"
                 android:layout_height="125dp"
                 android:layout_gravity="center"
+                android:layout_marginVertical="5dp"
                 android:layout_marginEnd="20dp"
                 app:cardBackgroundColor="@color/white"
                 app:cardCornerRadius="16dp"
@@ -147,8 +256,43 @@
                     android:layout_height="match_parent"
                     android:gravity="center"
                     android:text="@string/accessories"
-                    android:textSize="20sp"
+                    android:textSize="18sp"
                     android:textStyle="bold" />
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/accessoriesEmptyPlaceholder"
+                android:visibility="gone"
+                android:layout_width="125dp"
+                android:layout_height="125dp"
+                android:layout_marginVertical="5dp"
+                app:cardBackgroundColor="@color/white"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="4dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:paddingVertical="16dp">
+
+                    <ImageView
+                        android:layout_width="75dp"
+                        android:layout_height="75dp"
+                        android:src="@drawable/image_placeholder"
+                        android:contentDescription="@string/content_description"/>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:text="@string/collection_empty"
+                        android:textSize="14sp"
+                        android:textStyle="bold" />
+
+                </LinearLayout>
+
             </androidx.cardview.widget.CardView>
 
             <androidx.recyclerview.widget.RecyclerView
@@ -160,6 +304,7 @@
         </LinearLayout>
 
         <androidx.cardview.widget.CardView
+            android:id="@+id/addCollection"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
@@ -177,7 +322,8 @@
                 android:layout_height="wrap_content"
                 android:gravity="center"
                 android:orientation="horizontal"
-                android:padding="16dp">
+                android:paddingHorizontal="16dp"
+                android:paddingVertical="12dp">
 
                 <ImageView
                     android:layout_width="30dp"
@@ -190,7 +336,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/collection_add"
-                    android:textSize="18sp"
+                    android:textSize="16sp"
                     android:textStyle="bold" />
             </LinearLayout>
         </androidx.cardview.widget.CardView>

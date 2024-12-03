@@ -146,8 +146,8 @@ class SignupActivity : AppCompatActivity() {
     // Hide loading
     private fun hideLoading() {
         binding.progressBar.visibility = View.INVISIBLE
-        binding.loginButton.setBackgroundColor(getColor(R.color.pink))
-        binding.signupButton.setBackgroundColor(getColor(R.color.pink))
+        binding.loginButton.setBackgroundColor(getColor(R.color.light_pink))
+        binding.signupButton.setBackgroundColor(getColor(R.color.light_pink))
         binding.loginButton.isEnabled = true
         binding.signupButton.isEnabled = true
     }
@@ -172,6 +172,7 @@ class SignupActivity : AppCompatActivity() {
     // Move to home activity
     private fun startHomeActivity() {
         startActivity(Intent(this, HomeActivity::class.java).apply {
+            putExtra("defaultFragment", "CollectionFragment")
             flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
         })
     }
