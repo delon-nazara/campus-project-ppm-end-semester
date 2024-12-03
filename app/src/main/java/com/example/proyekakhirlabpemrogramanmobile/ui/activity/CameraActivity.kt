@@ -42,7 +42,7 @@ class CameraActivity : AppCompatActivity() {
         }
 
         binding.closeIcon.setOnClickListener {
-            startHomeActivity()
+            finish()
         }
 
         if (isCameraPermissionGranted()) {
@@ -78,7 +78,7 @@ class CameraActivity : AppCompatActivity() {
             .setTitle(getString(R.string.camera_permission_required))
             .setMessage(getString(R.string.camera_permission_explained))
             .setPositiveButton("Ok") { _, _ ->
-                startHomeActivity()
+                finish()
             }
             .create()
             .show()
@@ -138,13 +138,6 @@ class CameraActivity : AppCompatActivity() {
 
             }
         )
-    }
-
-    private fun startHomeActivity() {
-        startActivity(Intent(this, HomeActivity::class.java).apply {
-            putExtra("defaultFragment", "CollectionFragment")
-            flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
-        })
     }
 
 }

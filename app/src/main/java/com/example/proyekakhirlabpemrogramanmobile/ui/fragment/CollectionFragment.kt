@@ -43,8 +43,10 @@ class CollectionFragment : Fragment() {
             .addOnSuccessListener { documents ->
                 if (documents.documents.isEmpty()) {
                     binding.topEmptyPlaceholder.visibility = View.VISIBLE
+                    binding.recyclerViewTop.visibility = View.GONE
                 } else {
                     binding.topEmptyPlaceholder.visibility = View.GONE
+                    binding.recyclerViewTop.visibility = View.VISIBLE
                 }
 
                 documents.forEach {
@@ -60,8 +62,10 @@ class CollectionFragment : Fragment() {
             .addOnSuccessListener { documents ->
                 if (documents.documents.isEmpty()) {
                     binding.bottomEmptyPlaceholder.visibility = View.VISIBLE
+                    binding.recyclerViewBottom.visibility = View.GONE
                 } else {
                     binding.bottomEmptyPlaceholder.visibility = View.GONE
+                    binding.recyclerViewBottom.visibility = View.VISIBLE
                 }
 
                 documents.forEach {
@@ -77,8 +81,10 @@ class CollectionFragment : Fragment() {
             .addOnSuccessListener { documents ->
                 if (documents.documents.isEmpty()) {
                     binding.shoesEmptyPlaceholder.visibility = View.VISIBLE
+                    binding.recyclerViewShoes.visibility = View.GONE
                 } else {
                     binding.shoesEmptyPlaceholder.visibility = View.GONE
+                    binding.recyclerViewShoes.visibility = View.VISIBLE
                 }
 
                 documents.forEach {
@@ -94,8 +100,10 @@ class CollectionFragment : Fragment() {
             .addOnSuccessListener { documents ->
                 if (documents.documents.isEmpty()) {
                     binding.accessoriesEmptyPlaceholder.visibility = View.VISIBLE
+                    binding.recyclerViewAccessories.visibility = View.GONE
                 } else {
                     binding.accessoriesEmptyPlaceholder.visibility = View.GONE
+                    binding.recyclerViewAccessories.visibility = View.VISIBLE
                 }
 
                 documents.forEach {

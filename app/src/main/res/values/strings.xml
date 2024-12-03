@@ -49,9 +49,28 @@
     <string name="shoes">Shoes\nCollection</string>
     <string name="accessories">Accessories\nCollection</string>
 
-    <!-- Another Screen -->
+    <!-- Outfit Screen -->
     <string name="outfit_title">List Outfit</string>
+    <string name="outfit_create">Create Outfit</string>
+    <string name="outfit_top">Top</string>
+    <string name="outfit_bottom">Bottom</string>
+    <string name="outfit_shoes">Shoes</string>
+    <string name="outfit_accessories">Accessories</string>
+    <string name="outfit_empty">You don\'t have any outfit list.\nCreate one by pressing the button below.</string>
+    <string name="outfit_empty_image">Empty collection.\n\n\nCreate one first.</string>
+    <string name="outfit_name">Outfit name input…</string>
+    <string name="outfit_name_empty">Outfit name cannot be empty</string>
+    <string name="outfit_image_empty">Outfit image cannot be empty</string>
+    <string name="outfit_save">Save Outfit</string>
+    <string name="outfit_random">Random All</string>
+    <string name="outfit_save_loading">Save outfit…</string>
+    <string name="outfit_save_success">Outfit saved</string>
+    <string name="outfit_save_error">Failed to save</string>
+
+    <!-- Schedule Screen -->
     <string name="schedule_title">Your Schedule</string>
+
+    <!-- Profile Screen -->
     <string name="profile_title">Profile Setting</string>
     <string name="logout">Logout</string>
 

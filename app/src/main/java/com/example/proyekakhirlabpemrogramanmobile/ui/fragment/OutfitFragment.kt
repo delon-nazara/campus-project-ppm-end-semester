@@ -1,14 +1,22 @@
 package com.example.proyekakhirlabpemrogramanmobile.ui.fragment
 
+import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.proyekakhirlabpemrogramanmobile.R
+import com.example.proyekakhirlabpemrogramanmobile.adapter.CollectionAdapter
 import com.example.proyekakhirlabpemrogramanmobile.adapter.OutfitAdapter
 import com.example.proyekakhirlabpemrogramanmobile.databinding.FragmentOutfitBinding
+import com.example.proyekakhirlabpemrogramanmobile.ui.activity.CreateOutfitActivity
+import com.example.proyekakhirlabpemrogramanmobile.ui.activity.HomeActivity
+import com.google.firebase.auth.ktx.auth
+import com.google.firebase.firestore.ktx.firestore
+import com.google.firebase.ktx.Firebase
 
 class OutfitFragment : Fragment() {
     private var _binding: FragmentOutfitBinding? = null
@@ -21,28 +29,51 @@ class OutfitFragment : Fragment() {
         _binding = FragmentOutfitBinding.inflate(inflater, container, false)
         val view = binding.root
 
-        val items = listOf(
-            OutfitAdapter.OutfitItem(
-                "Formal Outfit",
-                listOf(R.drawable.top_1, R.drawable.bottom_1, R.drawable.shoes_1, R.drawable.accessories_1)
-            ),
-            OutfitAdapter.OutfitItem(
-                "Riding Outfit",
-                listOf(R.drawable.top_2, R.drawable.bottom_2, R.drawable.shoes_2, R.drawable.accessories_2)
-            ),
-            OutfitAdapter.OutfitItem(
-                "Holiday Outfit",
-                listOf(R.drawable.top_3, R.drawable.bottom_3, R.drawable.shoes_3, R.drawable.accessories_3)
-            ),
-            OutfitAdapter.OutfitItem(
-                "Sports Outfit",
-                listOf(R.drawable.top_4, R.drawable.bottom_4, R.drawable.shoes_4, R.drawable.accessories_4)
-            )
-        )
-        binding.recyclerView.adapter = OutfitAdapter(items)
-        binding.recyclerView.layoutManager = LinearLayoutManager(context)
+        val outfitUrl = mutableListOf<OutfitAdapter.OutfitItem>()
+
+        val userEmail = Firebase.auth.currentUser?.email ?: "unknown_user"
+        val db = Firebase.firestore
+        val dbRef = db.collection("collection").document(userEmail)
+
+        dbRef.collection("outfit").get()
+            .addOnSuccessListener { documents ->
+                if (documents.documents.isEmpty()) {
+                    binding.emptyPlaceholder.visibility = View.VISIBLE
+                    binding.recyclerView.visibility = View.GONE
+                } else {
+                    binding.emptyPlaceholder.visibility = View.GONE
+                    binding.recyclerView.visibility = View.VISIBLE
+                }
+
+                documents.forEach {
+                    outfitUrl.add(
+                        OutfitAdapter.OutfitItem(
+                            it.data["outfitName"].toString(),
+                            listOf(
+                                it.data["topUrl"].toString(),
+                                it.data["bottomUrl"].toString(),
+                                it.data["shoesUrl"].toString(),
+                                it.data["accessoriesUrl"].toString(),
+                            )
+                        )
+                    )
+                }
+
+                binding.recyclerView.adapter = OutfitAdapter(outfitUrl)
+                binding.recyclerView.layoutManager = LinearLayoutManager(context)
+            }
+
+        binding.addButton.setOnClickListener {
+            startCreateOutfitActivity()
+        }
 
         return view
+    }
+
+    private fun startCreateOutfitActivity() {
+        startActivity(Intent(requireContext(), CreateOutfitActivity::class.java).apply {
+            flags = Intent.FLAG_ACTIVITY_CLEAR_TOP
+        })
     }
 
     override fun onDestroyView() {

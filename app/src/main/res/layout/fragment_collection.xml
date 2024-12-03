@@ -52,7 +52,7 @@
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/topEmptyPlaceholder"
-                android:visibility="gone"
+                android:visibility="visible"
                 android:layout_width="125dp"
                 android:layout_height="125dp"
                 android:layout_marginVertical="5dp"
@@ -87,6 +87,7 @@
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/recyclerViewTop"
+                android:visibility="gone"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
@@ -122,7 +123,7 @@
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/bottomEmptyPlaceholder"
-                android:visibility="gone"
+                android:visibility="visible"
                 android:layout_width="125dp"
                 android:layout_height="125dp"
                 android:layout_marginVertical="5dp"
@@ -157,6 +158,7 @@
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/recyclerViewBottom"
+                android:visibility="gone"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
@@ -192,7 +194,7 @@
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/shoesEmptyPlaceholder"
-                android:visibility="gone"
+                android:visibility="visible"
                 android:layout_width="125dp"
                 android:layout_height="125dp"
                 android:layout_marginVertical="5dp"
@@ -227,6 +229,7 @@
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/recyclerViewShoes"
+                android:visibility="gone"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
@@ -262,7 +265,7 @@
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/accessoriesEmptyPlaceholder"
-                android:visibility="gone"
+                android:visibility="visible"
                 android:layout_width="125dp"
                 android:layout_height="125dp"
                 android:layout_marginVertical="5dp"
@@ -297,6 +300,7 @@
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/recyclerViewAccessories"
+                android:visibility="gone"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"

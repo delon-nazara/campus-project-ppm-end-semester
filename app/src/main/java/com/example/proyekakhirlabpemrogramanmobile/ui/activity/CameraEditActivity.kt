@@ -50,7 +50,7 @@ class CameraEditActivity : AppCompatActivity() {
         binding.cropImageView.rotateImage(90)
 
         binding.backButton.setOnClickListener {
-            startCameraActivity()
+            finish()
         }
 
         binding.flipButton.setOnClickListener {
@@ -68,12 +68,6 @@ class CameraEditActivity : AppCompatActivity() {
         binding.doneButton.setOnClickListener {
             showSaveImageDialog(fullImagePath)
         }
-    }
-
-    private fun startCameraActivity() {
-        startActivity(Intent(this, CameraActivity::class.java).apply {
-            flags = Intent.FLAG_ACTIVITY_CLEAR_TOP
-        })
     }
 
     private fun showSaveImageDialog(fullImagePath: String) {

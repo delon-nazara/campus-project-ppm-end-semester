@@ -5,30 +5,19 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.fragment.app.Fragment
-import com.cloudinary.android.MediaManager
+import com.example.proyekakhirlabpemrogramanmobile.R
+import com.example.proyekakhirlabpemrogramanmobile.databinding.ActivityHomeBinding
 import com.example.proyekakhirlabpemrogramanmobile.ui.fragment.CollectionFragment
 import com.example.proyekakhirlabpemrogramanmobile.ui.fragment.OutfitFragment
 import com.example.proyekakhirlabpemrogramanmobile.ui.fragment.ProfileFragment
-import com.example.proyekakhirlabpemrogramanmobile.R
 import com.example.proyekakhirlabpemrogramanmobile.ui.fragment.ScheduleFragment
-import com.example.proyekakhirlabpemrogramanmobile.databinding.ActivityHomeBinding
-import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.auth.ktx.auth
-import com.google.firebase.ktx.Firebase
-import io.github.cdimascio.dotenv.dotenv
 
 class HomeActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityHomeBinding
-    private lateinit var auth: FirebaseAuth
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
-        // Firebase auth initialization
-        auth = Firebase.auth
-        val user = auth.currentUser
-        val userEmail = user?.email
 
         // Binding setup
         binding = ActivityHomeBinding.inflate(layoutInflater)
@@ -42,7 +31,7 @@ class HomeActivity : AppCompatActivity() {
         }
 
         // Set default fragment
-        val defaultFragment = intent.getStringExtra("defaultFragment")
+        val defaultFragment = intent.getStringExtra("defaultFragment") ?: "OutfitFragment"
         when (defaultFragment) {
             "OutfitFragment" -> {
                 replaceFragment(OutfitFragment())
