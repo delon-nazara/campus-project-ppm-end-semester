@@ -19,7 +19,8 @@ class CollectionFragment : Fragment() {
     private val binding get() = _binding!!
 
     override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
+        inflater: LayoutInflater,
+        container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
         _binding = FragmentCollectionBinding.inflate(inflater, container, false)
@@ -51,7 +52,8 @@ class CollectionFragment : Fragment() {
                 }
 
                 binding.recyclerViewTop.adapter = CollectionAdapter(topUrl)
-                binding.recyclerViewTop.layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
+                binding.recyclerViewTop.layoutManager =
+                    LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
             }
 
         dbRef.collection("bottom").get()
@@ -67,7 +69,8 @@ class CollectionFragment : Fragment() {
                 }
 
                 binding.recyclerViewBottom.adapter = CollectionAdapter(bottomUrl)
-                binding.recyclerViewBottom.layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
+                binding.recyclerViewBottom.layoutManager =
+                    LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
             }
 
         dbRef.collection("shoes").get()
@@ -83,7 +86,8 @@ class CollectionFragment : Fragment() {
                 }
 
                 binding.recyclerViewShoes.adapter = CollectionAdapter(shoesUrl)
-                binding.recyclerViewShoes.layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
+                binding.recyclerViewShoes.layoutManager =
+                    LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
             }
 
         dbRef.collection("accessories").get()
@@ -99,7 +103,8 @@ class CollectionFragment : Fragment() {
                 }
 
                 binding.recyclerViewAccessories.adapter = CollectionAdapter(accessoriesUrl)
-                binding.recyclerViewAccessories.layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
+                binding.recyclerViewAccessories.layoutManager =
+                    LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
             }
 
         return view

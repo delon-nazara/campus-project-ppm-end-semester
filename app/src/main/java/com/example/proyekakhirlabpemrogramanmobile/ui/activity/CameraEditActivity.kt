@@ -125,6 +125,7 @@ class CameraEditActivity : AppCompatActivity() {
         val userEmail = Firebase.auth.currentUser?.email ?: "unknown_user"
         val folderPath = "My Wardrobe/$userEmail"
 
+
         MediaManager
             .get()
             .upload(file.absolutePath)
