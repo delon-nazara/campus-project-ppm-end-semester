@@ -31,7 +31,7 @@ class HomeActivity : AppCompatActivity() {
         }
 
         // Set default fragment
-        val defaultFragment = intent.getStringExtra("defaultFragment") ?: "OutfitFragment"
+        val defaultFragment = intent.getStringExtra("defaultFragment") ?: "ScheduleFragment"
         when (defaultFragment) {
             "OutfitFragment" -> {
                 replaceFragment(OutfitFragment())

@@ -57,18 +57,31 @@
     <string name="outfit_shoes">Shoes</string>
     <string name="outfit_accessories">Accessories</string>
     <string name="outfit_empty">You don\'t have any outfit list.\nCreate one by pressing the button below.</string>
-    <string name="outfit_empty_image">Empty collection.\n\n\nCreate one first.</string>
-    <string name="outfit_name">Outfit name input…</string>
+    <string name="outfit_empty_collection">Empty collection.\n\n\nCreate one first.</string>
+    <string name="outfit_name">Outfit name…</string>
     <string name="outfit_name_empty">Outfit name cannot be empty</string>
     <string name="outfit_image_empty">Outfit image cannot be empty</string>
     <string name="outfit_save">Save Outfit</string>
     <string name="outfit_random">Random All</string>
-    <string name="outfit_save_loading">Save outfit…</string>
     <string name="outfit_save_success">Outfit saved</string>
-    <string name="outfit_save_error">Failed to save</string>
+    <string name="outfit_save_error">Failed to save outfit</string>
 
     <!-- Schedule Screen -->
     <string name="schedule_title">Your Schedule</string>
+    <string name="schedule_create">Create Schedule</string>
+    <string name="schedule_empty">You don\'t have any schedule on this date.\nCreate one by pressing the button below.</string>
+    <string name="schedule_empty_outfit">Empty outfit.\n\n\nCreate one first.</string>
+    <string name="schedule_name_title">Name</string>
+    <string name="schedule_name">Input schedule name…</string>
+    <string name="schedule_name_empty">Name cannot be empty</string>
+    <string name="schedule_date_title">Date</string>
+    <string name="schedule_date">Choose date…</string>
+    <string name="schedule_outfit_title">Outfit</string>
+    <string name="schedule_outfit">Choose outfit…</string>
+    <string name="schedule_outfit_empty">Outfit cannot be empty</string>
+    <string name="schedule_outfit_preview_title">Preview</string>
+    <string name="schedule_save_success">Schedule saved</string>
+    <string name="schedule_save_error">Failed to save schedule</string>
 
     <!-- Profile Screen -->
     <string name="profile_title">Profile Setting</string>

@@ -10,14 +10,16 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.proyekakhirlabpemrogramanmobile.R
 
-class OutfitAdapter(private val items: List<OutfitItem>) : RecyclerView.Adapter<OutfitAdapter.OutfitViewHolder>() {
-    data class OutfitItem(
+class ScheduleAdapter(private val items: List<ScheduleItem>) : RecyclerView.Adapter<ScheduleAdapter.OutfitViewHolder>() {
+    data class ScheduleItem(
         val name: String,
+        val outfit: String,
         val images: List<String>
     )
 
     inner class OutfitViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        val outfitName: TextView = itemView.findViewById(R.id.outfitName)
+        val scheduleName: TextView = itemView.findViewById(R.id.scheduleName)
+        val scheduleOutfit: TextView = itemView.findViewById(R.id.scheduleOutfit)
         val topImage: ImageView = itemView.findViewById(R.id.topImage)
         val bottomImage: ImageView = itemView.findViewById(R.id.bottomImage)
         val shoesImage: ImageView = itemView.findViewById(R.id.shoesImage)
@@ -25,13 +27,14 @@ class OutfitAdapter(private val items: List<OutfitItem>) : RecyclerView.Adapter<
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): OutfitViewHolder {
-        val view = LayoutInflater.from(parent.context).inflate(R.layout.item_outfit, parent, false)
+        val view = LayoutInflater.from(parent.context).inflate(R.layout.item_schedule, parent, false)
         return OutfitViewHolder(view)
     }
 
     override fun onBindViewHolder(holder: OutfitViewHolder, position: Int) {
         val item = items[position]
-        holder.outfitName.text = item.name
+        holder.scheduleName.text = item.name
+        holder.scheduleOutfit.text = item.outfit
 
         if (item.images[0].isNotEmpty()) {
             holder.topImage.visibility = View.VISIBLE

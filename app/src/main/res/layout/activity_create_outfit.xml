@@ -37,7 +37,7 @@
                 android:layout_gravity="center_vertical"
                 android:fontFamily="@font/hedvig_letters_serif"
                 android:gravity="center"
-                android:text="@string/outfit_title"
+                android:text="@string/outfit_create"
                 android:textSize="26sp"
                 android:textStyle="bold" />
         </FrameLayout>
@@ -46,7 +46,7 @@
             android:id="@+id/nameInput"
             android:layout_width="300dp"
             android:layout_height="60dp"
-            android:layout_marginTop="25dp"
+            android:layout_marginTop="30dp"
             android:autofillHints="name"
             android:background="@drawable/button_shape"
             android:hint="@string/outfit_name"
@@ -69,7 +69,7 @@
                 android:layout_height="150dp"
                 android:layout_gravity="center"
                 android:layout_margin="25dp"
-                app:cardBackgroundColor="@color/white"
+                app:cardBackgroundColor="@color/soft_pink"
                 app:cardCornerRadius="16dp"
                 app:cardElevation="4dp">
 
@@ -91,7 +91,7 @@
                 android:layout_gravity="center_horizontal"
                 android:layout_marginVertical="5dp"
                 android:layout_marginEnd="60dp"
-                app:cardBackgroundColor="@color/white"
+                app:cardBackgroundColor="@color/soft_pink"
                 app:cardCornerRadius="16dp"
                 app:cardElevation="10dp">
 
@@ -128,7 +128,7 @@
                 android:layout_height="150dp"
                 android:layout_gravity="center"
                 android:layout_margin="25dp"
-                app:cardBackgroundColor="@color/white"
+                app:cardBackgroundColor="@color/soft_pink"
                 app:cardCornerRadius="16dp"
                 app:cardElevation="4dp">
 
@@ -150,7 +150,7 @@
                 android:layout_gravity="center_horizontal"
                 android:layout_marginVertical="5dp"
                 android:layout_marginEnd="60dp"
-                app:cardBackgroundColor="@color/white"
+                app:cardBackgroundColor="@color/soft_pink"
                 app:cardCornerRadius="16dp"
                 app:cardElevation="10dp">
 
@@ -187,7 +187,7 @@
                 android:layout_height="150dp"
                 android:layout_gravity="center"
                 android:layout_margin="25dp"
-                app:cardBackgroundColor="@color/white"
+                app:cardBackgroundColor="@color/soft_pink"
                 app:cardCornerRadius="16dp"
                 app:cardElevation="4dp">
 
@@ -209,7 +209,7 @@
                 android:layout_gravity="center_horizontal"
                 android:layout_marginVertical="5dp"
                 android:layout_marginEnd="60dp"
-                app:cardBackgroundColor="@color/white"
+                app:cardBackgroundColor="@color/soft_pink"
                 app:cardCornerRadius="16dp"
                 app:cardElevation="10dp">
 
@@ -246,7 +246,7 @@
                 android:layout_height="150dp"
                 android:layout_gravity="center"
                 android:layout_margin="25dp"
-                app:cardBackgroundColor="@color/white"
+                app:cardBackgroundColor="@color/soft_pink"
                 app:cardCornerRadius="16dp"
                 app:cardElevation="4dp">
 
@@ -268,7 +268,7 @@
                 android:layout_gravity="center_horizontal"
                 android:layout_marginVertical="5dp"
                 android:layout_marginEnd="60dp"
-                app:cardBackgroundColor="@color/white"
+                app:cardBackgroundColor="@color/soft_pink"
                 app:cardCornerRadius="16dp"
                 app:cardElevation="10dp">
 

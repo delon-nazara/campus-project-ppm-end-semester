@@ -28,7 +28,7 @@
         android:layout_marginTop="25dp"
         android:layout_marginBottom="5dp"
         android:layout_marginHorizontal="15dp"
-        app:cardBackgroundColor="@color/white"
+        app:cardBackgroundColor="@color/soft_pink"
         app:cardCornerRadius="16dp"
         app:cardElevation="4dp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -43,7 +43,6 @@
             android:textSize="16sp"
             android:textStyle="bold"
             android:text="@string/outfit_empty"/>
-
     </androidx.cardview.widget.CardView>
 
     <androidx.recyclerview.widget.RecyclerView
@@ -61,10 +60,10 @@
         android:id="@+id/addButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="18dp"
+        android:layout_margin="25dp"
         android:contentDescription="@string/content_description"
         android:src="@drawable/add_icon"
-        app:backgroundTint="@color/white"
+        app:backgroundTint="@color/soft_pink"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:tint="@color/black" />
