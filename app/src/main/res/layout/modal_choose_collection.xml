@@ -18,6 +18,7 @@
         android:layout_height="300dp"
         android:gravity="center"
         android:text="@string/outfit_empty_collection"
+        android:fontFamily="@font/hedvig_letters_serif"
         android:textSize="18sp"
         android:textStyle="bold"
         android:visibility="visible" />
@@ -30,5 +31,6 @@
         android:layout_marginTop="16dp"
         android:backgroundTint="@color/light_pink"
         android:text="@string/cancel"
+        android:fontFamily="@font/hedvig_letters_serif"
         android:textColor="@color/black" />
 </LinearLayout>

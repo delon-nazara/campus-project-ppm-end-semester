@@ -32,10 +32,11 @@
             app:layout_constraintTop_toBottomOf="@id/screenTitle">
 
             <androidx.cardview.widget.CardView
-                android:layout_width="150dp"
-                android:layout_height="125dp"
+                android:layout_width="125dp"
+                android:layout_height="100dp"
                 android:layout_gravity="center"
                 android:layout_marginVertical="5dp"
+                android:layout_marginStart="10dp"
                 android:layout_marginEnd="20dp"
                 app:cardBackgroundColor="@color/soft_pink"
                 app:cardCornerRadius="16dp"
@@ -46,6 +47,7 @@
                     android:layout_height="match_parent"
                     android:gravity="center"
                     android:text="@string/top"
+                    android:fontFamily="@font/hedvig_letters_serif"
                     android:textSize="18sp"
                     android:textStyle="bold" />
             </androidx.cardview.widget.CardView>
@@ -53,8 +55,8 @@
             <androidx.cardview.widget.CardView
                 android:id="@+id/topEmptyPlaceholder"
                 android:visibility="visible"
-                android:layout_width="125dp"
-                android:layout_height="125dp"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
                 android:layout_marginVertical="5dp"
                 app:cardBackgroundColor="@color/soft_pink"
                 app:cardCornerRadius="16dp"
@@ -78,6 +80,7 @@
                         android:layout_height="match_parent"
                         android:gravity="center"
                         android:text="@string/collection_empty"
+                        android:fontFamily="@font/hedvig_letters_serif"
                         android:textSize="14sp"
                         android:textStyle="bold" />
 
@@ -103,10 +106,11 @@
             app:layout_constraintTop_toBottomOf="@id/layoutTop">
 
             <androidx.cardview.widget.CardView
-                android:layout_width="150dp"
-                android:layout_height="125dp"
+                android:layout_width="125dp"
+                android:layout_height="100dp"
                 android:layout_gravity="center"
                 android:layout_marginVertical="5dp"
+                android:layout_marginStart="10dp"
                 android:layout_marginEnd="20dp"
                 app:cardBackgroundColor="@color/soft_pink"
                 app:cardCornerRadius="16dp"
@@ -117,6 +121,7 @@
                     android:layout_height="match_parent"
                     android:gravity="center"
                     android:text="@string/bottom"
+                    android:fontFamily="@font/hedvig_letters_serif"
                     android:textSize="18sp"
                     android:textStyle="bold" />
             </androidx.cardview.widget.CardView>
@@ -124,8 +129,8 @@
             <androidx.cardview.widget.CardView
                 android:id="@+id/bottomEmptyPlaceholder"
                 android:visibility="visible"
-                android:layout_width="125dp"
-                android:layout_height="125dp"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
                 android:layout_marginVertical="5dp"
                 app:cardBackgroundColor="@color/soft_pink"
                 app:cardCornerRadius="16dp"
@@ -149,6 +154,7 @@
                         android:layout_height="match_parent"
                         android:gravity="center"
                         android:text="@string/collection_empty"
+                        android:fontFamily="@font/hedvig_letters_serif"
                         android:textSize="14sp"
                         android:textStyle="bold" />
 
@@ -174,10 +180,11 @@
             app:layout_constraintTop_toBottomOf="@id/layoutBottom">
 
             <androidx.cardview.widget.CardView
-                android:layout_width="150dp"
-                android:layout_height="125dp"
+                android:layout_width="125dp"
+                android:layout_height="100dp"
                 android:layout_gravity="center"
                 android:layout_marginVertical="5dp"
+                android:layout_marginStart="10dp"
                 android:layout_marginEnd="20dp"
                 app:cardBackgroundColor="@color/soft_pink"
                 app:cardCornerRadius="16dp"
@@ -188,6 +195,7 @@
                     android:layout_height="match_parent"
                     android:gravity="center"
                     android:text="@string/shoes"
+                    android:fontFamily="@font/hedvig_letters_serif"
                     android:textSize="18sp"
                     android:textStyle="bold" />
             </androidx.cardview.widget.CardView>
@@ -195,8 +203,8 @@
             <androidx.cardview.widget.CardView
                 android:id="@+id/shoesEmptyPlaceholder"
                 android:visibility="visible"
-                android:layout_width="125dp"
-                android:layout_height="125dp"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
                 android:layout_marginVertical="5dp"
                 app:cardBackgroundColor="@color/soft_pink"
                 app:cardCornerRadius="16dp"
@@ -220,6 +228,7 @@
                         android:layout_height="match_parent"
                         android:gravity="center"
                         android:text="@string/collection_empty"
+                        android:fontFamily="@font/hedvig_letters_serif"
                         android:textSize="14sp"
                         android:textStyle="bold" />
 
@@ -245,10 +254,11 @@
             app:layout_constraintTop_toBottomOf="@id/layoutShoes">
 
             <androidx.cardview.widget.CardView
-                android:layout_width="150dp"
-                android:layout_height="125dp"
+                android:layout_width="125dp"
+                android:layout_height="100dp"
                 android:layout_gravity="center"
                 android:layout_marginVertical="5dp"
+                android:layout_marginStart="10dp"
                 android:layout_marginEnd="20dp"
                 app:cardBackgroundColor="@color/soft_pink"
                 app:cardCornerRadius="16dp"
@@ -259,6 +269,7 @@
                     android:layout_height="match_parent"
                     android:gravity="center"
                     android:text="@string/accessories"
+                    android:fontFamily="@font/hedvig_letters_serif"
                     android:textSize="18sp"
                     android:textStyle="bold" />
             </androidx.cardview.widget.CardView>
@@ -266,8 +277,8 @@
             <androidx.cardview.widget.CardView
                 android:id="@+id/accessoriesEmptyPlaceholder"
                 android:visibility="visible"
-                android:layout_width="125dp"
-                android:layout_height="125dp"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
                 android:layout_marginVertical="5dp"
                 app:cardBackgroundColor="@color/soft_pink"
                 app:cardCornerRadius="16dp"
@@ -291,6 +302,7 @@
                         android:layout_height="match_parent"
                         android:gravity="center"
                         android:text="@string/collection_empty"
+                        android:fontFamily="@font/hedvig_letters_serif"
                         android:textSize="14sp"
                         android:textStyle="bold" />
 

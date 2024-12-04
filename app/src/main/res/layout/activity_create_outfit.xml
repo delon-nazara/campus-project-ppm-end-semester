@@ -50,6 +50,7 @@
             android:autofillHints="name"
             android:background="@drawable/button_shape"
             android:hint="@string/outfit_name"
+            android:fontFamily="@font/hedvig_letters_serif"
             android:inputType="text"
             android:maxLines="1"
             android:padding="20dp"
@@ -101,6 +102,7 @@
                     android:layout_height="40dp"
                     android:gravity="center"
                     android:text="@string/outfit_top"
+                    android:fontFamily="@font/hedvig_letters_serif"
                     android:textSize="16sp"
                     android:textStyle="bold" />
             </androidx.cardview.widget.CardView>
@@ -160,6 +162,7 @@
                     android:layout_height="40dp"
                     android:gravity="center"
                     android:text="@string/outfit_bottom"
+                    android:fontFamily="@font/hedvig_letters_serif"
                     android:textSize="16sp"
                     android:textStyle="bold" />
             </androidx.cardview.widget.CardView>
@@ -219,6 +222,7 @@
                     android:layout_height="40dp"
                     android:gravity="center"
                     android:text="@string/outfit_shoes"
+                    android:fontFamily="@font/hedvig_letters_serif"
                     android:textSize="16sp"
                     android:textStyle="bold" />
             </androidx.cardview.widget.CardView>
@@ -278,6 +282,7 @@
                     android:layout_height="40dp"
                     android:gravity="center"
                     android:text="@string/outfit_accessories"
+                    android:fontFamily="@font/hedvig_letters_serif"
                     android:textSize="16sp"
                     android:textStyle="bold" />
             </androidx.cardview.widget.CardView>

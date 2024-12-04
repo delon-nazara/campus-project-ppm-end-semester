@@ -29,8 +29,8 @@
 
     <ImageView
         android:id="@+id/captureIcon"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
         android:layout_marginBottom="20dp"
         android:contentDescription="@string/content_description"
         android:src="@drawable/capture_icon"

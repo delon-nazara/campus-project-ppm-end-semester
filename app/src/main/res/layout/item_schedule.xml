@@ -21,6 +21,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="2dp"
+            android:fontFamily="@font/hedvig_letters_serif"
             android:textSize="18sp"
             android:textStyle="bold" />
 
@@ -29,6 +30,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="20dp"
+            android:fontFamily="@font/hedvig_letters_serif"
             android:textSize="16sp"
             android:textStyle="italic" />
 

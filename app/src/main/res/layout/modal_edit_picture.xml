@@ -21,6 +21,7 @@
         android:layout_marginBottom="24dp"
         android:autofillHints="name"
         android:hint="@string/image_name"
+        android:fontFamily="@font/hedvig_letters_serif"
         android:inputType="text" />
 
     <Spinner
@@ -43,13 +44,15 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="12dp"
-            android:text="@string/cancel" />
+            android:text="@string/cancel"
+            android:fontFamily="@font/hedvig_letters_serif" />
 
         <Button
             android:id="@+id/saveButton"
             style="?android:attr/buttonBarButtonStyle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/save" />
+            android:text="@string/save"
+            android:fontFamily="@font/hedvig_letters_serif" />
     </LinearLayout>
 </LinearLayout>

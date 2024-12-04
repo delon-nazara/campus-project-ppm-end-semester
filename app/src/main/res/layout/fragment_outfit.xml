@@ -40,6 +40,7 @@
             android:layout_height="match_parent"
             android:gravity="center"
             android:padding="16dp"
+            android:fontFamily="@font/hedvig_letters_serif"
             android:textSize="16sp"
             android:textStyle="bold"
             android:text="@string/outfit_empty"/>

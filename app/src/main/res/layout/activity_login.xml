@@ -32,6 +32,7 @@
         android:background="@drawable/button_shape"
         android:maxLines="1"
         android:hint="@string/email"
+        android:fontFamily="@font/hedvig_letters_serif"
         android:autofillHints="emailAddress"
         android:inputType="textEmailAddress"/>
 
@@ -62,6 +63,7 @@
             android:background="@drawable/button_shape"
             android:maxLines="1"
             android:hint="@string/password"
+            android:fontFamily="@font/hedvig_letters_serif"
             android:autofillHints="password"
             android:inputType="textPassword"/>
 
