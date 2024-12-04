@@ -8,6 +8,7 @@ import android.os.Bundle
 import android.util.Log
 import android.view.View
 import android.widget.Toast
+import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
@@ -37,6 +38,7 @@ class CameraEditActivity : AppCompatActivity() {
         binding = ActivityCameraEditBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        enableEdgeToEdge()
         ViewCompat.setOnApplyWindowInsetsListener(binding.root) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, v.paddingBottom)
@@ -47,7 +49,6 @@ class CameraEditActivity : AppCompatActivity() {
         val fullImageBitmap = BitmapFactory.decodeFile(fullImagePath)
 
         binding.cropImageView.setImageBitmap(fullImageBitmap)
-        binding.cropImageView.rotateImage(90)
 
         binding.backButton.setOnClickListener {
             finish()

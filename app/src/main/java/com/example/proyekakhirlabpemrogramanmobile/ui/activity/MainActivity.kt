@@ -3,7 +3,10 @@ package com.example.proyekakhirlabpemrogramanmobile.ui.activity
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
+import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.view.ViewCompat
+import androidx.core.view.WindowInsetsCompat
 import com.cloudinary.android.MediaManager
 import com.example.proyekakhirlabpemrogramanmobile.databinding.ActivityMainBinding
 import com.google.firebase.auth.FirebaseAuth
@@ -22,14 +25,19 @@ class MainActivity : AppCompatActivity() {
         // Cloudinary initialization
         CloudinaryManager.init(this)
 
-        startHomeActivity() //todo
-
         // Firebase auth initialization
         auth = Firebase.auth
 
         // Binding setup
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        enableEdgeToEdge()
+        ViewCompat.setOnApplyWindowInsetsListener(binding.root) { v, insets ->
+            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
+            v.setPadding(systemBars.left, systemBars.top, systemBars.right, v.paddingBottom)
+            insets
+        }
 
         // Set destination based on user auth
         binding.startButton.setOnClickListener {

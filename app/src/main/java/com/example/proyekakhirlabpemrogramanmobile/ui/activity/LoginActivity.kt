@@ -6,7 +6,10 @@ import android.text.InputType
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.view.ViewCompat
+import androidx.core.view.WindowInsetsCompat
 import com.example.proyekakhirlabpemrogramanmobile.R
 import com.example.proyekakhirlabpemrogramanmobile.databinding.ActivityLoginBinding
 import com.google.firebase.auth.FirebaseAuth
@@ -29,6 +32,13 @@ class LoginActivity : AppCompatActivity() {
         // Binding setup
         binding = ActivityLoginBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        enableEdgeToEdge()
+        ViewCompat.setOnApplyWindowInsetsListener(binding.root) { v, insets ->
+            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
+            v.setPadding(systemBars.left, systemBars.top, systemBars.right, v.paddingBottom)
+            insets
+        }
 
         // Password toggle
         binding.passwordToggle.setOnClickListener {

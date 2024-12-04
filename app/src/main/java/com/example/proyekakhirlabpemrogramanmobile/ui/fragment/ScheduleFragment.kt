@@ -30,7 +30,7 @@ class ScheduleFragment : Fragment() {
 
     private val calendar = Calendar.getInstance()
     private val locale = Locale("id", "ID")
-    private val dateFormat = SimpleDateFormat("EEEE, dd MMMM yyyy", locale)
+    private val dateFormat = SimpleDateFormat("dd MMMM yyyy", locale)
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,

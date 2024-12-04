@@ -1,6 +1,7 @@
 package com.example.proyekakhirlabpemrogramanmobile.ui.activity
 
 import android.os.Bundle
+import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
@@ -24,6 +25,7 @@ class HomeActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         // Add padding from status bar
+        enableEdgeToEdge()
         ViewCompat.setOnApplyWindowInsetsListener(binding.root) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, v.paddingBottom)
@@ -31,7 +33,7 @@ class HomeActivity : AppCompatActivity() {
         }
 
         // Set default fragment
-        val defaultFragment = intent.getStringExtra("defaultFragment") ?: "ScheduleFragment"
+        val defaultFragment = intent.getStringExtra("defaultFragment") ?: "CollectionFragment"
         when (defaultFragment) {
             "OutfitFragment" -> {
                 replaceFragment(OutfitFragment())

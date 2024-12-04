@@ -56,8 +56,8 @@
     <string name="outfit_bottom">Bottom</string>
     <string name="outfit_shoes">Shoes</string>
     <string name="outfit_accessories">Accessories</string>
-    <string name="outfit_empty">You don\'t have any outfit list.\nCreate one by pressing the button below.</string>
-    <string name="outfit_empty_collection">Empty collection.\n\n\nCreate one first.</string>
+    <string name="outfit_empty">You don\'t have any\noutfit list here.\n\nCreate one by pressing\nthe button below.</string>
+    <string name="outfit_empty_collection">Empty collection.\nCreate one first.</string>
     <string name="outfit_name">Outfit name…</string>
     <string name="outfit_name_empty">Outfit name cannot be empty</string>
     <string name="outfit_image_empty">Outfit image cannot be empty</string>
@@ -69,8 +69,8 @@
     <!-- Schedule Screen -->
     <string name="schedule_title">Your Schedule</string>
     <string name="schedule_create">Create Schedule</string>
-    <string name="schedule_empty">You don\'t have any schedule on this date.\nCreate one by pressing the button below.</string>
-    <string name="schedule_empty_outfit">Empty outfit.\n\n\nCreate one first.</string>
+    <string name="schedule_empty">You don\'t have any\nschedule on this date.\n\nCreate one by pressing\nthe button below.</string>
+    <string name="schedule_empty_outfit">Empty outfit.\nCreate one first.</string>
     <string name="schedule_name_title">Name</string>
     <string name="schedule_name">Input schedule name…</string>
     <string name="schedule_name_empty">Name cannot be empty</string>
